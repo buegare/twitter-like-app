@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   # devise_scope :user do
 	 #  get 'sign_up', to: 'devise/registrations#new'
   # end
+
+  authenticated :user do
+    root "tweets#index", as: "authenticated_root"
+  end
+
+ resources :tweets
 end
