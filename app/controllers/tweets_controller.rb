@@ -15,7 +15,7 @@ class TweetsController < ApplicationController
   		@tweet = current_user.tweets.build(tweet_params)
 
   		if @tweet.save
-  			flash[:success] = "New poll created successfuly!"
+  			flash[:success] = "New Tweet created successfuly!"
 			redirect_to tweet_path(@tweet)
 		else
 			render 'new'
