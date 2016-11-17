@@ -1,3 +1,19 @@
 // Place all the styles related to the Tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.user-info {
+	background-color: yellow;
+}
+
+.feed p{
+	word-wrap: break-word;
+}
+
+.row {
+	border: solid 1px red;
+}
+[class^="col"] {
+	border: solid 1px blue;
+}

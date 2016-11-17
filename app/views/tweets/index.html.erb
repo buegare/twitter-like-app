@@ -1,4 +1,16 @@
-<% @tweets.each do |tweet| %>
-	<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
-	<h5><%= tweet.body %></h5>
-<% end %>
+<div class="row">
+	<div class="col-md-3 user-info">
+			<p>placeholder</p>
+	</div>
+
+	<div class="col-md-6 feed">
+		<% @tweets.each do |tweet| %>
+			<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
+				<p><%= tweet.body %></p>
+		<% end %>
+	</div>
+
+	<div class="col-md-3">
+			<p>placeholder</p>
+	</div>
+</div>
