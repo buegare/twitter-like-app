@@ -11,6 +11,10 @@
 	word-wrap: break-word;
 }
 
+.left-menu-info {
+	padding-left: 10px;
+}
+
 .row {
 	border: solid 1px red;
 }

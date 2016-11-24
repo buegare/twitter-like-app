@@ -1,6 +1,27 @@
 <div class="row">
 	<div class="col-md-3 user-info">
-			<p>placeholder</p>
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-8">
+				<h4><%= current_user.fullname %></h4>
+				<h6><%= current_user.username %></h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 left-menu-info">
+				<h4>Tweets</h4>
+				<h5><%= @tweets.count %></h5>
+			</div>
+			<div class="col-md-4 left-menu-info">
+				<h4>Following</h4>
+				<h5><%= @follows.count %></h5>
+			</div>
+			<div class="col-md-4 left-menu-info">
+				<h4>Followers</h4>
+				<h5><%= @followers.count %></h5>
+			</div>
+		</div>
 	</div>
 
 	<div class="col-md-6 feed">

@@ -3,6 +3,8 @@ class TweetsController < ApplicationController
 
 	def index
 		@tweets = current_user.tweets
+		@follows = current_user.follows
+		@followers = current_user.followers
 	end
 
 	def new
