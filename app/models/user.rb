@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :tweets
-  has_many :friendships
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
