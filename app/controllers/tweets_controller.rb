@@ -2,8 +2,9 @@ class TweetsController < ApplicationController
 	before_action :set_tweet, only: [:show, :edit, :destroy, :update ]
 
 	def index
-		@tweets = current_user.tweets
-		@follows = current_user.follows
+		@follows = current_user.follows.map(&:following)
+		@tweets = Tweet.where(user_id: @follows)
+		@mytweets = current_user.tweets
 		@followers = current_user.followers
 	end
 
