@@ -25,10 +25,15 @@
 	</div>
 
 	<div class="col-md-6 feed">
-		<% @tweets.each do |tweet| %>
-			<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
-				<p><%= tweet.body %></p>
-		<% end %>
+		<div class="row">
+			<%= render 'form' %>
+		</div>
+		<div class="row">
+			<% @tweets.each do |tweet| %>
+				<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
+					<p><%= tweet.body %></p>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="col-md-3">

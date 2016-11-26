@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
 		@tweets = Tweet.where(user_id: @follows)
 		@mytweets = current_user.tweets
 		@followers = current_user.followers
+		@tweet = current_user.tweets.build
 	end
 
 	def new

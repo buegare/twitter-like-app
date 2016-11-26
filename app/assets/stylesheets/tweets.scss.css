@@ -15,9 +15,15 @@
 	padding-left: 10px;
 }
 
+.tweet-btn {
+	float: right;
+	margin-top: 5px;
+}
+
 .row {
 	border: solid 1px red;
 }
 [class^="col"] {
 	border: solid 1px blue;
 }
+

@@ -15,3 +15,15 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+	$( ".txt-area" ).css( "height", "34px" );
+	$(".tweet-btn").hide();
+
+	$( ".txt-area" ).click(function() {
+	  $(this).css( "height", "90px" );
+	  $(".tweet-btn").show();
+	});
+
+});
