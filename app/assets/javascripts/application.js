@@ -13,11 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
 
-	$( ".txt-area" ).css( "height", "34px" );
+  $( ".txt-area" ).css( "height", "34px" );
 	$(".tweet-btn").hide();
 
 	$( ".txt-area" ).click(function() {
