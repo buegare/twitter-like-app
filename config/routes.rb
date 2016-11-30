@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
  resources :tweets
+ # resources :users, only: [:show]
+ get ':id', to: 'users#show', as: "user"
 end
