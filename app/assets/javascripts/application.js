@@ -26,4 +26,10 @@ $(document).on('turbolinks:load', function() {
 	  $(".tweet-btn").show();
 	});
 
+
+	$( ".txt-area" ).focusout(function() {
+		$(this).css( "height", "35px" );
+	  	$(".tweet-btn").hide();
+	})
+
 });
