@@ -18,18 +18,18 @@
 
 $(document).on('turbolinks:load', function() {
 
-  $( ".txt-area" ).css( "height", "34px" );
-	$(".tweet-btn").hide();
+  	$( "#txt-area" ).css( "height", "35px" );
+	$("#tweet-btn").hide();
 
-	$( ".txt-area" ).click(function() {
+	$( "#txt-area" ).click(function() {
 	  $(this).css( "height", "90px" );
-	  $(".tweet-btn").show();
+	  $("#tweet-btn").show();
 	});
 
 
-	$( ".txt-area" ).focusout(function() {
-		$(this).css( "height", "35px" );
-	  	$(".tweet-btn").hide();
-	})
+	// $( "#tweet-area-div" ).focusout(function() {
+	// 	$("#txt-area").css( "height", "35px" );
+	//   	$("#tweet-btn").hide();
+	// });
 
 });
