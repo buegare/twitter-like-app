@@ -18,12 +18,33 @@
 
 $(document).on('turbolinks:load', function() {
 
+	// make text area small, hide button and counter
   	$( "#txt-area" ).css( "height", "35px" );
 	$("#tweet-btn").hide();
+	$("#counter").hide();
 
+	// make text area expand, button and counter to show on click
 	$( "#txt-area" ).click(function() {
 	  $(this).css( "height", "90px" );
-	  $("#tweet-btn").show();
+	  $("#tweet-btn").show().prop("disabled",true);
+	  $("#counter").show();
+	});
+
+
+	$( '#txt-area' ).keyup(function(e) {
+	  $character = $('#txt-area').val().length;
+
+	  if ( e.keyCode == 32 ) {
+	  	$('#counter').text( 140 - $character);
+	  } else {
+	  	  $('#counter').text( 140 - $character);
+		  if ( $character > 0 && $character < 141 ) {
+				$("#tweet-btn").prop("disabled",false);
+			} else {
+				$("#tweet-btn").prop("disabled",true);
+			}
+		}
+
 	});
 
 

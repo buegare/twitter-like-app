@@ -20,6 +20,11 @@
 	margin-top: 5px;
 }
 
+#counter {
+	float: right;
+	margin: 10px 10px 0px 0px;
+}
+
 .row {
 	border: solid 1px red;
 }
