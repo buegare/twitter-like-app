@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem 'friendly_id', '~> 5.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

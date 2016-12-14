@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	def show
-      @user = User.find(params[:id])
+      @user = User.friendly.find(params[:id])
       # redirect_to action: 'index', status: 301 unless @poll.friendly_id == params[:id]
     end
 
