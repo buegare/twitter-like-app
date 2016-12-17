@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
  resources :tweets
- # resources :users, only: [:show]
+ # resources :users, only: [:update, :show]
  get ':id', to: 'users#show', as: "user"
+ patch ':id', to: 'users#update', as: "user_update"
 end
