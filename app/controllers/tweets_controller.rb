@@ -1,17 +1,10 @@
 class TweetsController < ApplicationController
 	before_action :set_tweet, only: [:show, :edit, :destroy, :update ]
+	before_action :new_tweet, only: [:index, :new ]
 
 	def index
 		@tweets = Tweet.where(user_id: current_user.follows.map(&:following))
-		@tweet = current_user.tweets.build
-		@user = current_user
 	end
-
-	def new
-  		@tweet = current_user.tweets.build
-  	end
-
-  	def show; end
 
   	def create
   		@tweet = current_user.tweets.build(tweet_params)
@@ -28,6 +21,10 @@ class TweetsController < ApplicationController
 
   		def set_tweet
 	      @tweet = Tweet.find(params[:id])
+	    end
+
+	    def new_tweet
+	    	@tweet = current_user.tweets.build
 	    end
 
   		def tweet_params
