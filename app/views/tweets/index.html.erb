@@ -1,53 +1,55 @@
-<div class="row">
-	<div class="col-md-3 user-info">
-		<div class="row">
-			<div class="col-md-4">
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 user-info">
+			<div class="row">
+				<div class="col-md-4">
 
-				<% if current_user.image.exists? %>
-					<a href="#"><%= image_tag current_user.image.url(:thumb), class: "img-thumbnail" %></a>
-				<% else %>
-					<%= form_for current_user, html: { multipart: true } do |f| %>
-						<%= f.file_field :image %>
-						<%= f.submit %>
-					<% end %>
+					<!-- <!% if current_user.image.exists? %> -->
+						<%= link_to image_tag current_user.image.url(:thumb), class: "img-thumbnail" %>
+					<!-- <!% else %> -->
+						<%= form_for current_user, html: { multipart: true } do |f| %>
+							<%= f.file_field :image %>
+							<%= f.submit %>
+						<% end %>
+					<!-- <!% end %> -->
+
+				</div>
+				<div class="col-md-8">
+					<h4><%= link_to current_user.fullname, user_path(current_user)  %></h4>
+					<h6><%= link_to current_user.username, user_path(current_user)  %></h6>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4 left-menu-info">
+					<h4>Tweets</h4>
+					<h5><%= current_user.tweets.count %></h5>
+				</div>
+				<div class="col-md-4 left-menu-info">
+					<h4>Following</h4>
+					<h5><%= current_user.follows.map(&:following).count %></h5>
+				</div>
+				<div class="col-md-4 left-menu-info">
+					<h4>Followers</h4>
+					<h5><%= current_user.followers.count %></h5>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6 feed">
+			<div class="row">
+				<%= render 'form' %>
+			</div>
+			<div class="row">
+				<% @tweets.each do |tweet| %>
+					<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
+						<p><%= tweet.body %></p>
 				<% end %>
+			</div>
+		</div>
 
-			</div>
-			<div class="col-md-8">
-				<h4><%= link_to current_user.fullname, user_path(current_user)  %></h4>
-				<h6><%= link_to current_user.username, user_path(current_user)  %></h6>
-			</div>
+		<div class="col-md-3">
+				<p>placeholder</p>
 		</div>
-		
-		<div class="row">
-			<div class="col-md-4 left-menu-info">
-				<h4>Tweets</h4>
-				<h5><%= current_user.tweets.count %></h5>
-			</div>
-			<div class="col-md-4 left-menu-info">
-				<h4>Following</h4>
-				<h5><%= current_user.follows.map(&:following).count %></h5>
-			</div>
-			<div class="col-md-4 left-menu-info">
-				<h4>Followers</h4>
-				<h5><%= current_user.followers.count %></h5>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-6 feed">
-		<div class="row">
-			<%= render 'form' %>
-		</div>
-		<div class="row">
-			<% @tweets.each do |tweet| %>
-				<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
-					<p><%= tweet.body %></p>
-			<% end %>
-		</div>
-	</div>
-
-	<div class="col-md-3">
-			<p>placeholder</p>
 	</div>
 </div>

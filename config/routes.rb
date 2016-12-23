@@ -13,4 +13,5 @@ Rails.application.routes.draw do
  # resources :users, only: [:update, :show]
  get ':id', to: 'users#show', as: "user"
  patch ':id', to: 'users#update', as: "user_update"
+ get ':id', to: 'users#edit', as: "edit_user"
 end

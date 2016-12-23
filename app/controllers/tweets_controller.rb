@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
 	before_action :new_tweet, only: [:index, :new ]
 
 	def index
-		@tweets = Tweet.where(user_id: current_user.follows.map(&:following))
+		@tweets = Tweet.where(user_id: current_user.follows.map(&:following)).order(created_at: :desc)
 	end
 
   	def create

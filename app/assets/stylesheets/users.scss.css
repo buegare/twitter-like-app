@@ -1,0 +1,13 @@
+#image_header {
+	height: 400px;
+	width: 100%;
+	margin-top: -21px;
+}
+
+.feed p{
+	word-wrap: break-word;
+}
+
+#margin-left-show-view {
+	margin-left: 15px;
+}
