@@ -4,8 +4,6 @@ class UsersController < ApplicationController
 	def show
       @user = User.friendly.find(params[:id])
 	  @tweets = Tweet.where(user_id: current_user.id).order(created_at: :desc)
-
-      # redirect_to action: 'index', status: 301 unless @poll.friendly_id == params[:id]
     end
 
     def update

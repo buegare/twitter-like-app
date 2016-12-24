@@ -11,3 +11,14 @@
 #margin-left-show-view {
 	margin-left: 15px;
 }
+
+#medium-user-profile-image {
+	position: absolute;
+    top: -160px;
+    left: 150px;
+}
+
+.edit-profile-button {
+	margin-left: 190px;
+	margin-top: 15px;
+}

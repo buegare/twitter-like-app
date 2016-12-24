@@ -53,4 +53,14 @@ $(document).on('turbolinks:load', function() {
 	//   	$("#tweet-btn").hide();
 	// });
 
+	// Apply class when mouse hovers over options on navbar
+	// $(".add-border-to-nav-links").hover(
+	//   function () {
+	//     $(this).addClass("add-border-to-nav-links");
+	//   },
+	//   function () {
+	//     $(this).removeClass("add-border-to-nav-links");
+	//   }
+	// );
+
 });
