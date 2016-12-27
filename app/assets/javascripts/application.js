@@ -54,13 +54,17 @@ $(document).on('turbolinks:load', function() {
 	// });
 
 	// Apply class when mouse hovers over options on navbar
-	// $(".add-border-to-nav-links").hover(
-	//   function () {
-	//     $(this).addClass("add-border-to-nav-links");
-	//   },
-	//   function () {
-	//     $(this).removeClass("add-border-to-nav-links");
-	//   }
-	// );
+
+	function removeClass(elements, myclass) {
+		$(elements).removeClass(myclass);
+	}
+
+	removeClass(".nav-links a", "add-border-to-nav-links");
+
+	$(".nav-links a").hover(
+	  function () {
+	    $(this).toggleClass("add-border-to-nav-links");
+	  }
+	);
 
 });

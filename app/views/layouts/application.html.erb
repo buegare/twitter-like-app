@@ -29,9 +29,9 @@
         </button>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Home", authenticated_root_path, class: "add-border-to-nav-links" if current_page?("/") %></li>
-            <li><%= link_to "Notifications", "/path2"  %></li>
-            <li><%= link_to "Messages", "/path3"  %></li>
+            <li class="nav-links"><%= link_to "Home", authenticated_root_path, class: current_page?("/") ? "add-border-to-nav-links-home" : "" %></li>
+            <li class="nav-links"><%= link_to "Notifications", "/path2", class: "add-border-to-nav-links" %></li>
+            <li class="nav-links"><%= link_to "Messages", "/path3", class: "add-border-to-nav-links" %></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
