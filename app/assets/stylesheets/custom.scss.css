@@ -9,3 +9,10 @@
     transition: all .15s ease-in-out;
     height: 50px;
 }
+
+#nav-bar-image {
+	height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    margin-bottom: -25px;
+}
