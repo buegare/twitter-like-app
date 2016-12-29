@@ -8,8 +8,9 @@
 	word-wrap: break-word;
 }
 
-#margin-left-show-view {
+.margin-show-view {
 	margin-left: 15px;
+	margin-top: -7px;
 }
 
 #medium-user-profile-image {

@@ -67,4 +67,24 @@ $(document).on('turbolinks:load', function() {
 	  }
 	);
 
+
+	// Get what is typed into the search box and send to controller
+	
+	$('#search-suggestions-box').hide();
+	$('#search-box').keyup(function(){
+		var content = $('#search-box').val();
+
+		if ( content !== "" ) {
+			$.ajax({
+				url: "search_users",
+				type: "GET",
+				data:{ content_from_search_box: content}
+			});
+
+			$('#search-suggestions-box').show();
+		} else {
+			$('#search-suggestions-box').hide();
+		}
+	});
+
 });

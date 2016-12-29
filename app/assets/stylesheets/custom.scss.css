@@ -1,3 +1,7 @@
+body {
+	background-color: honeydew;
+}
+
 .add-border-to-nav-links {
 	border-bottom: 5px solid #1b95e0;
     transition: all .15s ease-in-out;
@@ -15,4 +19,48 @@
     width: 50px;
     margin-top: -15px;
     margin-bottom: -25px;
+}
+
+#search-box {
+	border-radius: 15px;
+    position: absolute;
+    right: 350px;
+    bottom: 7px;
+    width: 250px;
+}
+
+#search-suggestions-box {
+	position: absolute;
+    border: 1px solid #eee;
+    background-color: #fff;
+    left: 985px;
+    top: 55px;
+    width: 350px;
+    padding-left: 15px;
+    border-radius: 4px;
+}
+
+.search-suggestions-box-items {
+	padding: 10px 0px 10px 15px;
+	margin-left: -16px;
+}
+
+.search-suggestions-box-items:hover {
+	background-color: #1da1f2;
+	width: 350px;
+    padding: 10px 0px 10px 15px;
+    margin-left: -16px;
+}
+
+.friendship-status {
+	position: absolute;
+    left: 65px;
+    top: 30px;
+}
+
+.user-image-on-search-suggestion-box {
+    height: 45px;
+    border-radius: 4px;
+    position: relative;
+    top: 5px;
 }

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
  resources :tweets
  # resources :users, only: [:update, :show]
+ get 'search_users', to: 'users#search_users'
  get ':id', to: 'users#show', as: "user"
  patch ':id', to: 'users#update', as: "user_update"
  get ':id', to: 'users#edit', as: "edit_user"

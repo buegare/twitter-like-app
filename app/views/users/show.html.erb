@@ -3,16 +3,18 @@
 </div>
 
 <div class="row">
-	<div class="col-md-4">
-	</div>
-	<div class="col-md-4">
-		<div class="col-md-6">
-			<h4>following</h4>
-			<h5 id="margin-left-show-view"><%= current_user.follows.map(&:following).count %></h5>
+	<div class="col-md-4 col-md-offset-4">
+		<div class="col-md-4">
+			<h4>tweets</h4>
+			<h5 class="margin-show-view"><%= current_user.tweets.count %></h5>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
+			<h4>following</h4>
+			<h5 class="margin-show-view"><%= current_user.follows.map(&:following).count %></h5>
+		</div>
+		<div class="col-md-4">
 			<h4>followers</h4>
-			<h5 id="margin-left-show-view"><%= current_user.followers.count %></h5>
+			<h5 class="margin-show-view"><%= current_user.followers.count %></h5>
 		</div>
 	</div>
 	<div class="col-md-4">
