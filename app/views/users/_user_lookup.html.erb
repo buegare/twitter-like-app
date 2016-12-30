@@ -1,12 +1,14 @@
 <div class="nav navbar-right" id="search-suggestions-box">
 	<% if @users_found %>
-	  <% @users_found.each do |uf| %>
-	    <li class="search-suggestions-box-items">
-	    	<span><%= link_to image_tag uf.image.url(:thumb), class: "user-image-on-search-suggestion-box" %></span>
-	    	<strong><%= uf.fullname %></strong>
-	    	<small><%= uf.username %></small>
-	    	<h6 class="friendship-status"><%= check_friendship_status(uf) %></h6>
-	    </li>
-	  <% end %>
+		<% @users_found.each do |uf| %>
+			<li>
+				<%= link_to user_path(uf), class: "search-suggestions-box-link" do %>
+					<%= image_tag uf.image.url(:thumb), class: "user-image-on-search-suggestion-box" %>
+					<strong><%= uf.fullname %></strong>
+			    	<small><%= uf.username %></small>
+			    	<h6 class="friendship-status"><%= check_friendship_status(uf) %></h6>
+				<% end %>
+			</li>
+		<% end %>
 	<% end %>
 </div>

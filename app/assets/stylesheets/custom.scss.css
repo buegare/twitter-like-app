@@ -40,13 +40,14 @@ body {
     border-radius: 4px;
 }
 
-.search-suggestions-box-items {
+.search-suggestions-box-link {
 	padding: 10px 0px 10px 15px;
 	margin-left: -16px;
+	color: black;
 }
 
-.search-suggestions-box-items:hover {
-	background-color: #1da1f2;
+.search-suggestions-box-link:hover {
+	background-color: #1da1f2 !important;
 	width: 350px;
     padding: 10px 0px 10px 15px;
     margin-left: -16px;
