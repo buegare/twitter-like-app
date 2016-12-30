@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	def edit; end
 
 	def search_users
-		@users_found = User.where("username like ?", "%#{params[:content_from_search_box]}%")
+		@users_found = User.where("username like ?", "%#{params[:content_from_search_box]}%").take(8)
 	
 		respond_to do |format|
 	    	format.js
