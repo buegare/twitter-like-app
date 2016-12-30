@@ -5,7 +5,7 @@
 	    	<span><%= link_to image_tag uf.image.url(:thumb), class: "user-image-on-search-suggestion-box" %></span>
 	    	<strong><%= uf.fullname %></strong>
 	    	<small><%= uf.username %></small>
-	    	<h6 class="friendship-status">Status</h6>
+	    	<h6 class="friendship-status"><%= check_friendship_status(uf) %></h6>
 	    </li>
 	  <% end %>
 	<% end %>
