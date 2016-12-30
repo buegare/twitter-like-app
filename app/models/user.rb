@@ -3,6 +3,7 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
 
   has_attached_file :image, styles: { large: "1600x900>", medium: "300x300>", thumb: "50x50#" },
+                default_url: "image.png",
   							url: "/assets/users/:id/:style/:basename.:extension",
   							path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
