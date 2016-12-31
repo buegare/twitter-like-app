@@ -87,4 +87,27 @@ $(document).on('turbolinks:load', function() {
 		}
 	});
 
+
+
+	// Apply class to button on show view and change its text
+	function editProfileButton() {
+		if ( $(".edit-profile-button").text() === "Following" ) {
+			$(".edit-profile-button").hover(
+				  function() {
+				      	$(this).text("Unfollow");
+				    	$( this ).removeClass( "btn-default" );
+				    	$( this ).addClass( "btn-danger" );
+
+				  }, function() {
+				  		$(this).text("Following");
+				  		$( this ).removeClass( "btn-danger" );
+				  		$( this ).addClass( "btn-default" );
+				  }
+			);
+		};
+	}
+
+
+	editProfileButton();
+
 });

@@ -28,4 +28,11 @@ module UsersHelper
 		return false
 	end
 
+	def get_actions(user_id)
+		return "Edit Profile" if current_user.id == user_id
+		current_user.follows.each do |user|
+			return "Following" if user.id == user_id
+		end
+		return "Follow"
+	end
 end
