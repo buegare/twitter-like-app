@@ -21,6 +21,13 @@ body {
     margin-bottom: -25px;
 }
 
+#nav-bar-image-signin-signout {
+	height: 120px;
+	margin-top: -45px;
+	float: right;
+	margin-right: 495px;
+}
+
 #search-box {
 	border-radius: 15px;
     position: absolute;
@@ -65,4 +72,24 @@ body {
     border-radius: 4px;
     position: relative;
     top: 5px;
+}
+
+.signin_signup {
+	width: 450px;
+	bottom: 74px;
+	position: relative;
+}
+
+.jumbotron-signin_signout {
+	background-color: #58aee9;
+}
+
+.devise-header {
+	color: #FFF;
+	background-color: #0973ba;
+	border-color: #ddd;
+	padding: 1px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 }

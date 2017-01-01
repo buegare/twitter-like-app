@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     root "tweets#index", as: "authenticated_root"
   end
 
+  root 'tweets#index'
+
  resources :tweets
  # resources :users, only: [:update, :show]
  get 'search_users', to: 'users#search_users'
