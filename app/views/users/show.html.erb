@@ -17,8 +17,8 @@
 			<h5 class="margin-show-view"><%= @user.followers.count %></h5>
 		</div>
 	</div>
-	<div class="col-md-4">
-		<button class="btn btn-default edit-profile-button"><%= get_actions(@user.id) %></button>
+	<div class="col-md-4" id="follow-unfollow-button">
+		<%= button_to get_actions(@user.id), create_friendship_path(:user_id => @user.id), remote: true, class: "btn btn-default edit-profile-button" %>
 	</div>
 </div>
 

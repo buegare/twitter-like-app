@@ -1,8 +1,6 @@
 module UsersHelper
 
 	def check_friendship_status(user)
-		puts(is_signed_user_followed_by_user?(user), signed_user_follows_user?(user))
-
 		if is_signed_user_followed_by_user?(user) == true and signed_user_follows_user?(user) == true
 			return "You follow each other"
 		elsif is_signed_user_followed_by_user?(user) == true and signed_user_follows_user?(user) == false
@@ -31,7 +29,7 @@ module UsersHelper
 	def get_actions(user_id)
 		return "Edit Profile" if current_user.id == user_id
 		current_user.follows.each do |user|
-			return "Following" if user.id == user_id
+			return "Following" if user.following == user_id
 		end
 		return "Follow"
 	end
