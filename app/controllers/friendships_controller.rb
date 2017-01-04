@@ -1,17 +1,17 @@
 class FriendshipsController < ApplicationController
 
-	def create_friendship
-		
+	def handle_friendship
 		@user = User.find(params[:user_id])
-		follows_friendship = current_user.follows.build(following: @user.id)
-		follower_friendship = @user.followers.build(is_followed_by: current_user.id)
 
-  		if follows_friendship.save and follower_friendship.save
-			respond_to do |format|
-		    	format.js
-		    end
+		if params[:user_id] == current_user.id
+			return
 		else
-			redirect_to user_path(current_user)
+			signed_user_follows_user = current_user.follows.where(following: params[:user_id]).first
+			if signed_user_follows_user
+				Follow.destroy_friendship(signed_user_follows_user.id, params[:user_id], current_user)
+			else
+				Follow.create_friendship(params[:user_id], current_user)
+			end
 		end
 	end
 

@@ -90,24 +90,50 @@ $(document).on('turbolinks:load', function() {
 
 
 	// Apply class to button on show view and change its text
-	if ( $(".edit-profile-button").val() === "Following" ) {
+	// if ( $(".edit-profile-button").val() === "Following" ) {
 
-		$( ".edit-profile-button" ).removeClass( "btn-default" );
-		$( ".edit-profile-button" ).addClass( "btn-primary" );
+	// 	$( ".edit-profile-button" ).removeClass( "btn-default" );
+	// 	$( ".edit-profile-button" ).addClass( "btn-primary" );
+
+	// 	$(".edit-profile-button").hover(
+	// 		  function() {
+	// 		      	$(this).val("Unfollow");
+	// 		    	$( this ).removeClass( "btn-default" );
+	// 		    	$( this ).addClass( "btn-danger" );
+
+	// 		  }, function() {
+	// 		  		$(this).val("Following");
+	// 		  		$( this ).removeClass( "btn-danger" );
+	// 		  		$( this ).addClass( "btn-default" );
+	// 		  }
+	// 	);
+	// };
+
+		if ( $(".edit-profile-button").val() === "Following" ) {
+			$( ".edit-profile-button" ).removeClass( "btn-default" );
+			$( ".edit-profile-button" ).addClass( "btn-primary" );
+		}
 
 		$(".edit-profile-button").hover(
 			  function() {
-			      	$(this).val("Unfollow");
-			    	$( this ).removeClass( "btn-default" );
-			    	$( this ).addClass( "btn-danger" );
-
+			      	if ( $(".edit-profile-button").val() === "Following" ) {
+				      	$(this).val("Unfollow");
+				    	$( this ).removeClass( "btn-primary" );
+				    	$( this ).addClass( "btn-danger" );
+			    	}
 			  }, function() {
 			  		$(this).val("Following");
 			  		$( this ).removeClass( "btn-danger" );
-			  		$( this ).addClass( "btn-default" );
+			  		$( this ).addClass( "btn-primary" );
 			  }
 		);
-	};
 
+
+		$(".edit-profile-button").click(function() {
+			if ( $(".edit-profile-button").val() === "Follow" ) {
+				$( ".edit-profile-button" ).removeClass( "btn-default" );
+			  	$( ".edit-profile-button" ).addClass( "btn-primary" );
+			}
+		});
 
 });

@@ -17,5 +17,6 @@ Rails.application.routes.draw do
  get ':id', to: 'users#show', as: "user"
  patch ':id', to: 'users#update', as: "user_update"
  get ':id', to: 'users#edit', as: "edit_user"
- post 'create_friendship', to: 'friendships#create_friendship'
+ post 'handle_friendship', to: 'friendships#handle_friendship'
+
 end
