@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update ]
-
-	def show
-      @user = User.friendly.find(params[:id])
-	  @tweets = Tweet.where(user_id: current_user.id).order(created_at: :desc)
-    end
+	before_action :show_actions, only: [:show, :show_following]
 
     def update
 	    if @user.update(user_params)
@@ -32,6 +28,11 @@ class UsersController < ApplicationController
 
 	def user_params
       params.require(:user).permit(:image)
+    end
+
+    def show_actions
+    	@user = User.friendly.find(params[:id])
+	 	@tweets = Tweet.where(user_id: current_user.id).order(created_at: :desc)
     end
 
 end

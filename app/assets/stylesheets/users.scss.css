@@ -9,8 +9,8 @@
 }
 
 .margin-show-view {
-	margin-left: 15px;
-	margin-top: -7px;
+	position: relative;
+	bottom: 7px;
 }
 
 #medium-user-profile-image {
@@ -19,9 +19,65 @@
     left: 150px;
 }
 
-.edit-profile-button {
-	margin-left: 190px;
+.show-friendship-button {
+	margin-left: 250px;
 	margin-top: 10px;
 	width: 100px;
 	height: 40px;
+}
+
+.show-following {
+	border: solid 1px #eee;
+	background-color: white;
+	border-radius: 5px;
+	width: 290px;
+	height: 263px;
+	margin: 10px 10px 0px 0px;
+}
+
+.show-following-large-image {
+	height: 96px;
+	width: 288px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.show-following-thumb-image {
+	height: 70px;
+	width: 70px;
+	border: solid 3px white;
+	bottom: 25px;
+	left: 15px;
+	border-radius: 5px; 
+	position: relative;
+}
+
+.show-following-friendship-button {
+	height: 30px;
+	width: 95px;
+	float: right;
+	position: relative;
+	right: 15px;
+	bottom: 60px;
+}
+
+.show-following-username {
+	position: relative;
+	bottom: 55px;
+	left: 15px;
+}
+
+.info-bar-border {
+	border-bottom: solid 1px #eee;
+	background-color: white;
+}
+
+.info-bar-border-color {
+	border-bottom: 5px solid #1b95e0;
+    transition: all .15s ease-in-out;
+}
+
+.info-bar-width-height {
+	width: 100px;
+	height: 65px;
 }

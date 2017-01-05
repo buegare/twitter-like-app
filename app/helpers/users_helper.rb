@@ -33,4 +33,8 @@ module UsersHelper
 		end
 		return "Follow"
 	end
+
+	def find_user(user_id)
+		return User.find(user_id)
+	end
 end

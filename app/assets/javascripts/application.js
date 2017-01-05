@@ -90,50 +90,45 @@ $(document).on('turbolinks:load', function() {
 
 
 	// Apply class to button on show view and change its text
-	// if ( $(".edit-profile-button").val() === "Following" ) {
 
-	// 	$( ".edit-profile-button" ).removeClass( "btn-default" );
-	// 	$( ".edit-profile-button" ).addClass( "btn-primary" );
+	if ( $(".friendship-button-b").val() === "Following" ) {
+		$( ".friendship-button-b" ).removeClass( "btn-default" );
+		$( ".friendship-button-b" ).addClass( "btn-primary" );
+	}
 
-	// 	$(".edit-profile-button").hover(
-	// 		  function() {
-	// 		      	$(this).val("Unfollow");
-	// 		    	$( this ).removeClass( "btn-default" );
-	// 		    	$( this ).addClass( "btn-danger" );
-
-	// 		  }, function() {
-	// 		  		$(this).val("Following");
-	// 		  		$( this ).removeClass( "btn-danger" );
-	// 		  		$( this ).addClass( "btn-default" );
-	// 		  }
-	// 	);
-	// };
-
-		if ( $(".edit-profile-button").val() === "Following" ) {
-			$( ".edit-profile-button" ).removeClass( "btn-default" );
-			$( ".edit-profile-button" ).addClass( "btn-primary" );
-		}
-
-		$(".edit-profile-button").hover(
-			  function() {
-			      	if ( $(".edit-profile-button").val() === "Following" ) {
-				      	$(this).val("Unfollow");
-				    	$( this ).removeClass( "btn-primary" );
-				    	$( this ).addClass( "btn-danger" );
-			    	}
-			  }, function() {
+	$(".friendship-button-b").hover(
+		  function() {
+		      	if ( $(".friendship-button-b").val() === "Following" ) {
+			      	$(this).val("Unfollow");
+			    	$( this ).removeClass( "btn-primary" );
+			    	$( this ).addClass( "btn-danger" );
+		    	}
+		  }, function() {
+		  		if ( $(".friendship-button-b").val() === "Unfollow" ) {
 			  		$(this).val("Following");
 			  		$( this ).removeClass( "btn-danger" );
 			  		$( this ).addClass( "btn-primary" );
-			  }
-		);
+				}
+		  }
+	);
 
 
-		$(".edit-profile-button").click(function() {
-			if ( $(".edit-profile-button").val() === "Follow" ) {
-				$( ".edit-profile-button" ).removeClass( "btn-default" );
-			  	$( ".edit-profile-button" ).addClass( "btn-primary" );
-			}
-		});
+	$(".friendship-button-b").click(function() {
+		if ( $(".friendship-button-b").val() === "Follow" ) {
+			$( ".friendship-button-b" ).removeClass( "btn-default" );
+		  	$( ".friendship-button-b" ).addClass( "btn-primary" );
+		}
+	});
+
+
+	// Apply class to info-bar to add border
+
+	$('.info-bar-hover').hover(
+		function() {
+		      	$(this).toggleClass("info-bar-border-color")
+		  }
+	);
+
+
 
 });

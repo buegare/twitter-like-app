@@ -18,5 +18,6 @@ Rails.application.routes.draw do
  patch ':id', to: 'users#update', as: "user_update"
  get ':id', to: 'users#edit', as: "edit_user"
  post 'handle_friendship', to: 'friendships#handle_friendship'
+ get ':id/following', to: 'users#show_following', as: "show_following"
 
 end
