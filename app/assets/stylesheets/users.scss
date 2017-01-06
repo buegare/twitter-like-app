@@ -11,6 +11,7 @@
 .margin-show-view {
 	position: relative;
 	bottom: 7px;
+	z-index: -1;
 }
 
 #medium-user-profile-image {
@@ -77,7 +78,18 @@
     transition: all .15s ease-in-out;
 }
 
-.info-bar-width-height {
+.info-bar-width-height-padding {
 	width: 100px;
 	height: 65px;
+	padding: 0px;
+	z-index: 0;
+}
+
+.info-bar-link {
+	color: #697882;
+	padding: 8px 23px 31px 23px;
+	&:hover {
+        color: black;
+		text-decoration: none;
+    }
 }
