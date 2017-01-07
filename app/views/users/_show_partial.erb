@@ -18,7 +18,11 @@
 		</div>
 	</div>
 	<div class="col-md-4 friendship-button">
-		<%= button_to get_actions(@user.id), handle_friendship_path(:user_id => @user.id), remote: true, class: "btn btn-default friendship-button-b show-friendship-button" %>
+		<% if current_user.id == @user.id %>
+			<button class="btn btn-default show-friendship-button">Edit Profile</button>
+		<% else %>
+			<%= button_to get_actions(@user.id), handle_friendship_path(:user_id => @user.id), remote: true, class: "btn btn-default friendship-button-b show-friendship-button" %>
+		<% end %>
 	</div>
 </div>
 
