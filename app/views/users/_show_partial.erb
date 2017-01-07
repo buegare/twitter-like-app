@@ -8,12 +8,12 @@
 			<h4 class="text-center"><%= link_to 'tweets', user_path(), class: "info-bar-link" %></h4>
 			<h5 class="margin-show-view text-center"><%= @user.tweets.count %></h5>
 		</div>
-		<div class="col-md-4 info-bar-width-height-padding <%= current_page?(user_path) ? "info-bar-hover" : "info-bar-border-color" %>">
+		<div class="col-md-4 info-bar-width-height-padding <%= current_page?(show_following_path) ? "info-bar-border-color" : "info-bar-hover" %>">
 			<h4 class="text-center"><%= link_to 'following', show_following_path(), class: "info-bar-link" %></h4>
 			<h5 class="margin-show-view text-center"><%= @user.follows.count %></h5>
 		</div>
-		<div class="col-md-4 info-bar-width-height-padding info-bar-hover">
-			<h4 class="text-center">followers</h4>
+		<div class="col-md-4 info-bar-width-height-padding <%= current_page?(show_followers_path) ? "info-bar-border-color" : "info-bar-hover" %>">
+			<h4 class="text-center"><%= link_to 'followers', show_followers_path(), class: "info-bar-link" %></h4>
 			<h5 class="margin-show-view text-center"><%= @user.followers.count %></h5>
 		</div>
 	</div>

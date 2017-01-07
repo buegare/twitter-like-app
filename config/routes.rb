@@ -19,5 +19,6 @@ Rails.application.routes.draw do
  get ':id', to: 'users#edit', as: "edit_user"
  post 'handle_friendship', to: 'friendships#handle_friendship'
  get ':id/following', to: 'users#show_following', as: "show_following"
+ get ':id/followers', to: 'users#show_followers', as: "show_followers"
 
 end

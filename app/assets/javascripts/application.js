@@ -114,9 +114,14 @@ $(document).on('turbolinks:load', function() {
 
 
 	$(".friendship-button-b").click(function() {
-		if ( $(".friendship-button-b").val() === "Follow" ) {
+		if ( $(".friendship-button-b").val() === "Unfollow" ) {
+			$( ".friendship-button-b" ).removeClass( "btn-danger" );
+		  	$( ".friendship-button-b" ).addClass( "btn-default" );
+		  	$(this).val("Follow");
+		} else if ( $(".friendship-button-b").val() === "Follow" ) {
 			$( ".friendship-button-b" ).removeClass( "btn-default" );
 		  	$( ".friendship-button-b" ).addClass( "btn-primary" );
+		  	$(this).val("Following");
 		}
 	});
 

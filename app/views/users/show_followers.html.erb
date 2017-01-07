@@ -1,0 +1,24 @@
+<%= render 'show_partial' %>
+
+	<div class="col-md-8">
+		<% @user.followers.each do |f| %>
+			<% if f.is_followed_by %>
+				<div class="col-md-4 show-following">
+					<% user = find_user(f.is_followed_by) %>
+					<div class="row">
+						<%= image_tag user.image.url(:large), class: "show-following-large-image" %>
+					</div>
+					<div class="row friendship-button">
+						<%= image_tag user.image.url(:thumb), class: "show-following-thumb-image" %>
+						<%= button_to get_actions(user.id), handle_friendship_path(:user_id => user.id), remote: true, class: "btn btn-default show-following-friendship-button" %>
+					</div>
+					<div class="row show-following-username">
+						<h4><strong><%= user.fullname %></strong></h4>
+						<h5><%= user.username %></h5>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+</div>

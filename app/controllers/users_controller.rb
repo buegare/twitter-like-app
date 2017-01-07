@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update ]
-	before_action :show_actions, only: [:show, :show_following]
+	before_action :show_actions, only: [:show, :show_following, :show_followers]
 
     def update
 	    if @user.update(user_params)
