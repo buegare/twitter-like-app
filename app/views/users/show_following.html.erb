@@ -10,7 +10,7 @@
 					</div>
 					<div class="row friendship-button">
 						<%= image_tag user.image.url(:thumb), class: "show-following-thumb-image" %>
-						<%= button_to get_actions(user.id), handle_friendship_path(:user_id => user.id), remote: true, class: "btn btn-default show-following-friendship-button" %>
+						<%= button_to get_actions(user.id), handle_friendship_path(:user_id => user.id), remote: true, class: "btn btn-default friendship-button-b show-following-friendship-button" %>
 					</div>
 					<div class="row show-following-username">
 						<h4><strong><%= user.fullname %></strong></h4>

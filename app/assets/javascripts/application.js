@@ -91,20 +91,30 @@ $(document).on('turbolinks:load', function() {
 
 	// Apply class to button on show view and change its text
 
-	if ( $(".friendship-button-b").val() === "Following" ) {
-		$( ".friendship-button-b" ).removeClass( "btn-default" );
-		$( ".friendship-button-b" ).addClass( "btn-primary" );
-	}
+	var buttons = $('.friendship-button-b')
+
+	buttons.each(function() {
+		if ( $(this).val() === "Following" ) {
+			$(this).removeClass( "btn-default" );
+			$(this).addClass( "btn-primary" );
+		}	  
+	});
+
+
+	// if ( $(".friendship-button-b").val() === "Following" ) {
+	// 	$( ".friendship-button-b" ).removeClass( "btn-default" );
+	// 	$( ".friendship-button-b" ).addClass( "btn-primary" );
+	// }
 
 	$(".friendship-button-b").hover(
 		  function() {
-		      	if ( $(".friendship-button-b").val() === "Following" ) {
+		      	if ( $(this).val() === "Following" ) {
 			      	$(this).val("Unfollow");
 			    	$( this ).removeClass( "btn-primary" );
 			    	$( this ).addClass( "btn-danger" );
 		    	}
 		  }, function() {
-		  		if ( $(".friendship-button-b").val() === "Unfollow" ) {
+		  		if ( $(this).val() === "Unfollow" ) {
 			  		$(this).val("Following");
 			  		$( this ).removeClass( "btn-danger" );
 			  		$( this ).addClass( "btn-primary" );
@@ -114,13 +124,13 @@ $(document).on('turbolinks:load', function() {
 
 
 	$(".friendship-button-b").click(function() {
-		if ( $(".friendship-button-b").val() === "Unfollow" ) {
-			$( ".friendship-button-b" ).removeClass( "btn-danger" );
-		  	$( ".friendship-button-b" ).addClass( "btn-default" );
+		if ( $(this).val() === "Unfollow" ) {
+			$(this).removeClass( "btn-danger" );
+		  	$(this).addClass( "btn-default" );
 		  	$(this).val("Follow");
-		} else if ( $(".friendship-button-b").val() === "Follow" ) {
-			$( ".friendship-button-b" ).removeClass( "btn-default" );
-		  	$( ".friendship-button-b" ).addClass( "btn-primary" );
+		} else if ( $(this).val() === "Follow" ) {
+			$(this).removeClass( "btn-default" );
+		  	$(this).addClass( "btn-primary" );
 		  	$(this).val("Following");
 		}
 	});

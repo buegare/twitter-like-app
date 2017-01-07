@@ -1,3 +1,3 @@
 $('.friendship_button form').remove()
 
-$('.friendship_button').append('<%= j button_to get_actions(@user.id), handle_friendship_path(:user_id => @user.id), remote: true, class: "btn btn-default edit-profile-button" %>');
+$('.friendship_button').append('<%= j button_to get_actions(@user.id), handle_friendship_path(:user_id => @user.id), remote: true, class: "btn btn-default" %>');
