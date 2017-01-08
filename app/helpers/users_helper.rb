@@ -27,7 +27,6 @@ module UsersHelper
 	end
 
 	def get_actions(user_id)
-		return "Edit Profile" if current_user.id == user_id
 		current_user.follows.each do |user|
 			return "Following" if user.following == user_id
 		end
