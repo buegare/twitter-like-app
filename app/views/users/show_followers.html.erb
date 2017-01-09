@@ -6,10 +6,10 @@
 				<div class="col-md-4 show-following">
 					<% user = find_user(f.is_followed_by) %>
 					<div class="row">
-						<%= image_tag user.image.url(:large), class: "show-following-large-image" %>
+						<%= image_tag user.image.url(:large), class: "medium-image" %>
 					</div>
 					<div class="row friendship-button">
-						<%= image_tag user.image.url(:thumb), class: "show-following-thumb-image" %>
+						<%= image_tag user.image.url(:thumb), class: "thumb-image" %>
 						<%= button_to get_actions(user.id), handle_friendship_path(:user_id => user.id), remote: true, class: "btn btn-default show-following-friendship-button" %>
 					</div>
 					<div class="row show-following-username">

@@ -5,14 +5,12 @@
 
 .user-info {
 	background-color: white;
+	width: 288px;
+	height: 192px;
 }
 
 .feed p{
 	word-wrap: break-word;
-}
-
-.left-menu-info {
-	padding-left: 10px;
 }
 
 #tweet-btn {
@@ -25,10 +23,10 @@
 	margin: 10px 10px 0px 0px;
 }
 
-/*.row {
-	border: solid 1px red;
-}
-[class^="col"] {
-	border: solid 1px blue;
-}
-*/
+// .row {
+// 	border: solid 1px red;
+// }
+// [class^="col"] {
+// 	border: solid 1px blue;
+// }
+

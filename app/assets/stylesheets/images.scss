@@ -1,0 +1,22 @@
+.medium-image {
+	height: 96px;
+	width: 288px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+@mixin t-image($left) {
+	height: 70px;
+	width: 70px;
+	border: solid 3px white;
+	bottom: 25px;
+	left: $left;
+	border-radius: 5px; 
+	position: relative;
+}
+
+
+
+.thumb-image { @include t-image(15px); }
+
+.thumb-image-home { @include t-image(-5px); }

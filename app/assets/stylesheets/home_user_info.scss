@@ -1,0 +1,39 @@
+#user-info-user-name {
+	position: relative;
+	right: 20px;
+	
+	h4 a {
+		color: black;
+	}
+
+	h6 a{
+		position: relative;
+		bottom: 5px;
+		color: #707e88;
+
+		&:hover {
+			color: #1b95e0;
+		}
+	}
+}
+
+#user-info-stats {
+	position: relative;
+	bottom: 20px;
+
+	div>span {
+		font-size: 10px;
+		color: #8899a6;
+	}
+
+	div>h4 {
+		position: relative;
+		bottom: 13px;
+		color: #1b95e0;
+	}
+
+	div:nth-child(n+2) {
+		position: relative;
+		right: 20px;
+	}
+}
