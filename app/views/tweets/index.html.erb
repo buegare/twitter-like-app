@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-3 user-info">
+		<div class="col-md-3" id="user-info">
 			<div class="row">
 				<%= link_to image_tag current_user.image.url(:medium), class: "medium-image" %>
 			</div>
@@ -26,30 +26,35 @@
 			
 			<div class="row" id="user-info-stats">
 				<div class="col-md-4">
-					<span><%= link_to 'TWEETS', user_path(), class: "info-bar-link" %></span>
+					<span><%= link_to 'TWEETS', user_path(current_user) %></span>
 					<h4><%= current_user.tweets.count %></h4>
 				</div>
 				<div class="col-md-4">
-					<span><%= link_to 'FOLLOWING', show_following_path(), class: "info-bar-link" %></span>
+					<span><%= link_to 'FOLLOWING', show_following_path(current_user) %></span>
 					<h4><%= current_user.follows.count %></h4>
 				</div>
 				<div class="col-md-4">
-					<span><%= link_to 'FOLLOWERS', show_followers_path(), class: "info-bar-link" %></span>
+					<span><%= link_to 'FOLLOWERS', show_followers_path(current_user) %></span>
 					<h4><%= current_user.followers.count %></h4>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-6 feed">
+		<div class="col-md-6">
 			<div class="row">
 				<%= render 'form' %>
 			</div>
-			<div class="row">
-				<% @tweets.each do |tweet| %>
-					<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
+			<% @tweets.each do |tweet| %>
+				<div class="row feed">
+					<div class="col-md-4">
+						<%= link_to image_tag current_user.image.url(:thumb), class: "feed-image" %>
+					</div>
+					<div class="col-md-8">
+						<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
 						<p><%= tweet.body %></p>
-				<% end %>
-			</div>
+					</div>
+				</div>
+			<% end %>
 		</div>
 
 	</div>

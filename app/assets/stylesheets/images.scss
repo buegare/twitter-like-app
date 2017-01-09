@@ -15,6 +15,15 @@
 	position: relative;
 }
 
+.feed-image {
+	height: 48px;
+	width: 48px;
+	border: solid 3px white;
+	bottom: 25px;
+	left: -5px;
+	border-radius: 5px; 
+	position: relative;	
+}
 
 
 .thumb-image { @include t-image(15px); }

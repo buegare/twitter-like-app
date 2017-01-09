@@ -1,3 +1,12 @@
+#user-info {
+	background-color: white;
+	width: 290px;
+	height: 192px;
+	border-radius: 5px;
+	border: 1px solid #e1e8ed;
+	margin-right: 10px;
+}
+
 #user-info-user-name {
 	position: relative;
 	right: 20px;
@@ -21,9 +30,14 @@
 	position: relative;
 	bottom: 20px;
 
-	div>span {
+	div>span a{
 		font-size: 10px;
 		color: #8899a6;
+		text-decoration: none;
+
+		&:hover {
+			color: #1b95e0;
+		}
 	}
 
 	div>h4 {
