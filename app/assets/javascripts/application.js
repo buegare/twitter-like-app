@@ -19,7 +19,7 @@
 $(document).on('turbolinks:load', function() {
 
 	// make text area small, hide button and counter
-  	$( "#txt-area" ).css( "height", "35px" );
+
 	$("#tweet-btn").hide();
 	$("#counter").hide();
 

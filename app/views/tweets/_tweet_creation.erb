@@ -1,7 +1,10 @@
 <%= form_for @tweet do |f| %>
 	<div class="row" id="tweet-area-div">
-		<div class="col-md-12">
-			<%= f.text_area :body, placeholder: "What's going on ?", class: 'form-control', id: 'txt-area' %>
+		<div class="col-md-2">
+			<%= image_tag("owl.png", id: 'tweet-creation-box-image') %>
+		</div>
+		<div class="col-md-10">
+			<%= f.text_area :body, placeholder: "What's going on?", class: 'form-control', id: 'txt-area' %>
 		</div>
 	</div>
 

@@ -1,31 +1,49 @@
-.medium-image {
-	height: 96px;
-	width: 288px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+$border: solid 3px white;
+
+@mixin images-common-size($height, $width) {
+	height: $height;
+	width: $width;
 }
 
-@mixin t-image($left) {
-	height: 70px;
-	width: 70px;
-	border: solid 3px white;
-	bottom: 25px;
+@mixin images-common-border-and-position($bottom, $left) {
+	bottom: $bottom;
 	left: $left;
-	border-radius: 5px; 
+	border-radius: 5px;
 	position: relative;
 }
 
 .feed-image {
-	height: 48px;
-	width: 48px;
-	border: solid 3px white;
-	bottom: 25px;
-	left: -5px;
-	border-radius: 5px; 
-	position: relative;	
+	@include images-common-size(48px, 48px);
+	@include images-common-border-and-position(-10px, -5px);
 }
 
+.thumb-image { 
+	@include images-common-size(70px, 70px);
+	@include images-common-border-and-position(20px, 15px);
+	border: $border;
+}
 
-.thumb-image { @include t-image(15px); }
+.thumb-image-home { 
+	@include images-common-size(70px, 70px);
+	@include images-common-border-and-position(25px, -5px);
+	border: $border;
+}
 
-.thumb-image-home { @include t-image(-5px); }
+.medium-image { 
+	@include images-common-size(96px, 288px);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#tweet-creation-box-image {
+	@include images-common-size(48px, 48px);
+	position: relative;
+	top: 8px;
+	left: 0px;
+}
+
+#nav-bar-image {
+	@include images-common-size(48px, 48px);
+    margin-top: -15px;
+    margin-bottom: -25px;
+}

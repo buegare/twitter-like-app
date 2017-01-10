@@ -1,0 +1,23 @@
+#tweet-area-div {
+	border: 1px solid #e1e8ed;;
+	height: 58px;
+	background-color: #E8F5FD;
+	width: 585px;
+	margin-left: 0px;
+}
+
+#txt-area {
+	$placeholder-color: #1b95e0;
+
+	height: 36px;
+	width: 506px;
+	position: relative;
+	left: -45px;
+	top: 9px;
+	border-radius: 2px;
+
+	&::-webkit-input-placeholder { color: $placeholder-color; } /* Chrome/Opera/Safari */
+	&::-moz-placeholder { color: $placeholder-color; } /* Firefox 19+ */
+	&:-ms-input-placeholder { color: $placeholder-color; } /* IE 10+ */
+	&:-moz-placeholder { color: $placeholder-color; } /* Firefox 18- */
+}
