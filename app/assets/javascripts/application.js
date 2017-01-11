@@ -25,23 +25,35 @@ $(document).on('turbolinks:load', function() {
 
 	// make text area expand, button and counter to show on click
 	$( "#txt-area" ).click(function() {
-	  $(this).css( "height", "90px" );
+	  $(this).css( "height", "80px" );
+	  $(this).addClass('txt-area-expanded');
+	  $( "#tweet-area-div" ).css( "height", "150px" );
 	  $("#tweet-btn").show().prop("disabled",true);
 	  $("#counter").show();
 	});
 
 
 	$( '#txt-area' ).keyup(function(e) {
-	  $character = $('#txt-area').val().length;
+		$character = $('#txt-area').val().length;
 
-	  if ( e.keyCode == 32 ) {
-	  	$('#counter').text( 140 - $character);
-	  } else {
-	  	  $('#counter').text( 140 - $character);
-		  if ( $character > 0 && $character < 141 ) {
+		if ( e.keyCode == 32 ) {
+	  		$('#counter').text( 140 - $character);
+	  	} else {
+	  		$('#counter').text( 140 - $character);
+			if ( $character > 0 && $character < 141 ) {
 				$("#tweet-btn").prop("disabled",false);
+				if ( 140 - $character <= 10 ) {
+					$('#counter').css("color", "red");
+				} else {
+					$('#counter').css("color", "#707e88");
+				}
 			} else {
 				$("#tweet-btn").prop("disabled",true);
+				if ( 140 - $character <= 10 ) {
+					$('#counter').css("color", "red");
+				} else {
+					$('#counter').css("color", "#707e88");
+				}
 			}
 		}
 

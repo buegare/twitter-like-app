@@ -44,6 +44,7 @@ $border: solid 3px white;
 
 #nav-bar-image {
 	@include images-common-size(48px, 48px);
-    margin-top: -15px;
-    margin-bottom: -25px;
+    position: relative;
+	bottom: 8px;
+	right: 45px;
 }

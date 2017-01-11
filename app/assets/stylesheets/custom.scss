@@ -1,17 +1,12 @@
+// .row {
+// 	border: solid 1px red;
+// }
+// [class^="col"] {
+// 	border: solid 1px blue;
+// }
+
 body {
 	background-color: honeydew;
-}
-
-.add-border-to-nav-links {
-	border-bottom: 5px solid #1b95e0;
-    transition: all .15s ease-in-out;
-    height: 50px;
-}
-
-.add-border-to-nav-links-home {
-	border-bottom: 5px solid #1b95e0;
-    transition: all .15s ease-in-out;
-    height: 50px;
 }
 
 #nav-bar-image-signin-signout {
@@ -19,14 +14,6 @@ body {
 	margin-top: -45px;
 	float: right;
 	margin-right: 495px;
-}
-
-#search-box {
-	border-radius: 15px;
-    position: absolute;
-    right: 350px;
-    bottom: 7px;
-    width: 250px;
 }
 
 #search-suggestions-box {
@@ -85,9 +72,4 @@ body {
 	border-bottom: 1px solid transparent;
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
-}
-
-.navbar-border-margin {
-	border-bottom: 1px solid rgba(0,0,0,0.15);
-	margin-bottom: 10px;
 }

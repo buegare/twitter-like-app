@@ -6,13 +6,12 @@
 		<div class="col-md-10">
 			<%= f.text_area :body, placeholder: "What's going on?", class: 'form-control', id: 'txt-area' %>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-3 col-md-offset-9">
-			<%= f.submit 'Tweet', class: 'btn btn-info', id: 'tweet-btn' %>
-			<div id="counter">140</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-8">
+				<%= f.submit 'Tweet', class: 'btn btn-info', id: 'tweet-btn' %>
+				<div id="counter">140</div>
+			</div>
 		</div>
 	</div>
 <% end %>
-
