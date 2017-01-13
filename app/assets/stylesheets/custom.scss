@@ -9,51 +9,6 @@ body {
 	background-color: honeydew;
 }
 
-#nav-bar-image-signin-signout {
-	height: 120px;
-	margin-top: -45px;
-	float: right;
-	margin-right: 495px;
-}
-
-#search-suggestions-box {
-	position: absolute;
-    border: 1px solid #eee;
-    background-color: #fff;
-    left: 985px;
-    top: 55px;
-    width: 350px;
-    padding-left: 15px;
-    border-radius: 4px;
-}
-
-.search-suggestions-box-link {
-	padding: 10px 0px 10px 15px;
-	margin-left: -16px;
-	color: black;
-}
-
-.search-suggestions-box-link:hover {
-	background-color: #1da1f2 !important;
-	width: 350px;
-    padding: 10px 0px 10px 15px;
-    margin-left: -16px;
-    color: white;
-}
-
-.friendship-status {
-	position: absolute;
-    left: 65px;
-    top: 30px;
-}
-
-.user-image-on-search-suggestion-box {
-    height: 45px;
-    border-radius: 4px;
-    position: relative;
-    top: 5px;
-}
-
 .signin_signup {
 	width: 450px;
 	bottom: 74px;

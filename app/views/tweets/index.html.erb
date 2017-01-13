@@ -2,7 +2,9 @@
 	<div class="row">
 		<div class="col-md-3" id="user-info">
 			<div class="row">
-				<%= link_to image_tag current_user.image.url(:medium), class: "medium-image" %>
+				<%= link_to user_path(current_user) do  %>
+					<%= image_tag current_user.image.url(:medium), class: "medium-image" %>
+				<% end %>
 			</div>
 
 			<div class="row">
@@ -47,7 +49,9 @@
 			<% @tweets.each do |tweet| %>
 				<div class="row feed">
 					<div class="col-md-2">
-						<%= link_to image_tag tweet.user.image.url(:thumb), class: "feed-image" %>
+						<%= link_to user_path(tweet.user) do  %>
+							<%= image_tag tweet.user.image.url(:thumb), class: "feed-image" %>
+						<% end %>
 					</div>
 					<div class="col-md-10">
 						<div class="row">

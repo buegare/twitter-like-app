@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
 
   		if @tweet.save
   			flash[:success] = "New Tweet created successfuly!"
-			redirect_to user_path(current_user.id)
+			redirect_to user_path(current_user)
 		else
 			render 'new'
 		end

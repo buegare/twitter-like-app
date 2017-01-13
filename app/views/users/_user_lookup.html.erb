@@ -3,10 +3,10 @@
 		<% @users_found.each do |uf| %>
 			<li>
 				<%= link_to user_path(uf), class: "search-suggestions-box-link" do %>
-					<%= image_tag uf.image.url(:thumb), class: "user-image-on-search-suggestion-box" %>
+					<%= image_tag uf.image.url(:thumb), class: "search-suggestion-box-image" %>
 					<strong><%= uf.fullname %></strong>
 			    	<small><%= uf.username %></small>
-			    	<h6 class="friendship-status"><%= check_friendship_status(uf) %></h6>
+			    	<h6><%= check_friendship_status(uf) %></h6>
 				<% end %>
 			</li>
 		<% end %>

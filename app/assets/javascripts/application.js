@@ -18,7 +18,12 @@
 
 $(document).on('turbolinks:load', function() {
 
-	// make text area small, hide button and counter
+	
+	/*************************************************
+	*******		Tweet creation area 		**********
+	*************************************************/
+	
+	// hide button and counter
 
 	$("#tweet-btn").hide();
 	$("#counter").hide();
@@ -58,12 +63,11 @@ $(document).on('turbolinks:load', function() {
 		}
 
 	});
+	
+	/*************************************************
+	*******		navbar links        		**********
+	*************************************************/
 
-
-	// $( "#tweet-area-div" ).focusout(function() {
-	// 	$("#txt-area").css( "height", "35px" );
-	//   	$("#tweet-btn").hide();
-	// });
 
 	// Apply class when mouse hovers over options on navbar
 
@@ -79,6 +83,11 @@ $(document).on('turbolinks:load', function() {
 	  }
 	);
 
+
+
+	/*************************************************
+	*******		Search box          		**********
+	*************************************************/
 
 	// Get what is typed into the search box and send to controller
 	
@@ -100,6 +109,37 @@ $(document).on('turbolinks:load', function() {
 	});
 
 
+	/*************************************************
+	*******		Search box suggestions 		**********
+	*************************************************/
+
+	$(document).mouseup(function (e) {
+	    var container = $("#search-suggestions-box");
+
+	    // if the target of the click isn't the container...
+	    // ... nor a descendant of the container
+	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+	        container.hide();
+	        e.stopPropagation();
+	    };
+
+	    var txtarea = $("#txt-area");
+	    var tweetbtn = $("#tweet-btn");
+
+		if (!txtarea.is(e.target) && !tweetbtn.is(e.target)) {
+	        txtarea.css("height", "36px");
+	        $('#tweet-area-div').css("height", "58px");
+	        tweetbtn.hide();
+	        $("#counter").hide();
+	        e.stopPropagation();
+	    }
+
+	});	
+
+	/*************************************************
+	*******		Friendship button   		**********
+	*************************************************/
+
 
 	// Apply class to button on show view and change its text
 
@@ -111,12 +151,6 @@ $(document).on('turbolinks:load', function() {
 			$(this).addClass( "btn-primary" );
 		}	  
 	});
-
-
-	// if ( $(".friendship-button-b").val() === "Following" ) {
-	// 	$( ".friendship-button-b" ).removeClass( "btn-default" );
-	// 	$( ".friendship-button-b" ).addClass( "btn-primary" );
-	// }
 
 	$(".friendship-button-b").hover(
 		  function() {
@@ -148,11 +182,16 @@ $(document).on('turbolinks:load', function() {
 	});
 
 
+	/*************************************************
+	*******		info-bar            		**********
+	*************************************************/
+
+
 	// Apply class to info-bar to add border
 
 	$('.info-bar-hover').hover(
 		function() {
-		      	$(this).toggleClass("info-bar-border-color")
+		    $(this).toggleClass("info-bar-border-color")
 		  }
 	);
 

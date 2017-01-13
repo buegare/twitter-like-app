@@ -43,8 +43,19 @@ $border: solid 3px white;
 }
 
 #nav-bar-image {
-	@include images-common-size(48px, 48px);
+	@include images-common-size(41px, 41px);
     position: relative;
-	bottom: 8px;
-	right: 45px;
+	bottom: -16px;
+}
+
+.search-suggestion-box-image {
+    @include images-common-size(32px, 32px);
+    border-radius: 4px;
+}
+
+#navbar-signin-signout-image {
+	@include images-common-size(120px, 120px);
+	margin-top: -45px;
+	float: right;
+	margin-right: 495px;
 }
