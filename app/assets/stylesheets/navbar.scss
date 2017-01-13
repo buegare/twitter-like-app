@@ -35,13 +35,26 @@
     font-size: 12px;
 }
 
+@mixin search-suggestions-box-before-after($top, $color) {
+	position: absolute;
+    right: 310px;
+	top: $top;
+    border-style: solid;
+    border-width: 0px 12px 10px 12px;
+    border-color: $color transparent;
+}
+
 #search-suggestions-box {
 	position: absolute;
-    border: 1px solid #eee;
     right: 6px;
-    top: 55px;
+    top: 53px;
+    border: 1px solid #eee;
     width: 350px;
     border-radius: 4px;
+
+    &:after { @include search-suggestions-box-before-after(-10px, #FFFFFF) }
+
+	&:before { @include search-suggestions-box-before-after(-11px, #eee) }
 }
 
 #search-and-suggestion-box-position {
@@ -50,6 +63,7 @@
 	form {
 		position: absolute;
 		right: 135px;
+		top: 3px;
 	}
 }
 
@@ -80,7 +94,7 @@
 .navbar-dropdown-position {
 	position: relative;
 	right: 90px;
-	bottom: 23px;
+	bottom: 20px;
 
 	li.dropdown.open > a {
 		background-color: #fff0;
