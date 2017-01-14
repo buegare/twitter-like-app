@@ -1,5 +1,6 @@
 if ('<%= @users_found.count %>' > 0) {
 	$('#search-suggestions-box').replaceWith('<%= j render("user_lookup") %>');
 } else {
+	$('#search-suggestions-box').css("padding", "10px");
 	$('#search-suggestions-box').text("No users found");
 } 

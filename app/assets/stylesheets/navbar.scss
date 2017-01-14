@@ -33,11 +33,18 @@
     width: 221px;
     height: 32px;
     font-size: 12px;
+    background-color: #f5f8fa;
+    transition: all .2s ease-in-out;
+
+    &:focus {
+    	background-color: #fff;
+    	transition: all .2s ease-in-out;
+    }
 }
 
-@mixin search-suggestions-box-before-after($top, $color) {
+@mixin arrow-on-top($top, $right, $color) {
 	position: absolute;
-    right: 310px;
+    right: $right;
 	top: $top;
     border-style: solid;
     border-width: 0px 12px 10px 12px;
@@ -50,11 +57,14 @@
     top: 53px;
     border: 1px solid #eee;
     width: 350px;
-    border-radius: 4px;
+    border-radius: 5px;
+	background-color: #fff;
+	padding-top: 4px;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.25);
 
-    &:after { @include search-suggestions-box-before-after(-10px, #FFFFFF) }
+    &:after { @include arrow-on-top(-10px, 310px, #FFFFFF) }
 
-	&:before { @include search-suggestions-box-before-after(-11px, #eee) }
+	&:before { @include arrow-on-top(-11px, 310px, #eee) }
 }
 
 #search-and-suggestion-box-position {
@@ -69,7 +79,6 @@
 
 .search-suggestions-box-link {
 	height: 55px;
-	background-color: #fff;
 
 	&:hover {
 		background-color: #1b95e0 !important;
@@ -96,16 +105,27 @@
 	right: 90px;
 	bottom: 20px;
 
-	li.dropdown.open > a {
-		background-color: #fff0;
+	&:after { @include arrow-on-top(63px, 23px, #FFFFFF) }
 
-		&:focus {
-		  background-color: #fff0;
+	&:before { @include arrow-on-top(63px, 23px, #eee) }
+
+	li.dropdown.open {
+		
+		a {
+			$color: rgba(248, 248, 248, 0);
+			background-color: $color;
+
+			&:focus { background-color: $color; }
 		}
-	}
+	
+		ul { 
+			border-radius: 5px; 
+			border: 1px solid #eee;
+		}
 
-	li.dropdown.open li>a:hover {
-		background-color: #1b95e0 !important;
-		color: white;
+		li > a:hover {
+			background-color: #1b95e0 !important;
+			color: white;
+		}
 	}
 }
