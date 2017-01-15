@@ -44,8 +44,11 @@ $border: solid 3px white;
 
 #nav-bar-image {
 	@include images-common-size(41px, 41px);
-    position: relative;
-	bottom: -16px;
+	position: relative;
+	bottom: -11px;
+	cursor: pointer;
+	float: right;
+	right: 90px;
 }
 
 .search-suggestion-box-image {

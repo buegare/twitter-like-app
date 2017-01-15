@@ -189,11 +189,41 @@ $(document).on('turbolinks:load', function() {
 
 	// Apply class to info-bar to add border
 
-	$('.info-bar-hover').hover(
-		function() {
+	$('.info-bar-hover').hover(function() {
 		    $(this).toggleClass("info-bar-border-color")
 		  }
 	);
 
+	/*************************************************
+	*******		navbar-dropdown            	**********
+	*************************************************/
+
+	$(document).mouseup(function (e) {
+	    var container = $('#navbar-dropdown');
+
+	    // if the target of the click isn't the container...
+	    // ... nor a descendant of the container
+	    if (container.is(':visible') && !container.is(e.target) && container.has(e.target).length === 0) {
+	        console.log("1 if")
+	        container.hide();
+	        e.stopPropagation();
+	    } else {
+	    	if (e.target === $('#nav-bar-image')) {
+	    		console.log("2 if")
+	    		container.hide();
+	    		e.stopPropagation();
+	    	}
+	    }
+
+	});
+
+	$('#nav-bar-image').click(function() {
+		console.log("no click")
+		var container = $('#navbar-dropdown');
+
+		if (!container.is(':visible')) {
+			container.show();
+		} 
+	});
 
 });
