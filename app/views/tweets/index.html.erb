@@ -19,6 +19,16 @@
 						<!% end %> -->
 					<!-- <!% end %> -->
 
+					<div id="navbar-dropdown2">
+		            	<li>
+		            		<%= form_for current_user, html: { multipart: true } do |f| %>
+								<%= f.file_field :image %>
+								<%= f.submit %>
+							<% end %>
+		            	</li>
+		            	<li><h4>Cancel</h4></li>
+		            </div>
+
 				</div>
 				<div class="col-md-8" id="user-info-user-name">
 					<h4><strong><%= link_to current_user.fullname, user_path(current_user)  %></strong></h4>

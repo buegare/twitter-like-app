@@ -199,31 +199,20 @@ $(document).on('turbolinks:load', function() {
 	*************************************************/
 
 	$(document).mouseup(function (e) {
-	    var container = $('#navbar-dropdown');
+	    var dropdown = $('#navbar-dropdown');
+	    var navbar_image = $('#nav-bar-image');
 
-	    // if the target of the click isn't the container...
-	    // ... nor a descendant of the container
-	    if (container.is(':visible') && !container.is(e.target) && container.has(e.target).length === 0) {
-	        console.log("1 if")
-	        container.hide();
-	        e.stopPropagation();
-	    } else {
-	    	if (e.target === $('#nav-bar-image')) {
-	    		console.log("2 if")
-	    		container.hide();
-	    		e.stopPropagation();
-	    	}
-	    }
+	    if (navbar_image.is(e.target) && !dropdown.is(':visible')) {
+    		dropdown.show();
+    		e.stopPropagation();
+		} else if (navbar_image.is(e.target) && dropdown.is(':visible')) {
+    		dropdown.hide();
+    		e.stopPropagation();
+		} else if (!dropdown.is(e.target) && dropdown.has(e.target).length === 0) {
+    		dropdown.hide();
+    		e.stopPropagation();
+		}
 
-	});
-
-	$('#nav-bar-image').click(function() {
-		console.log("no click")
-		var container = $('#navbar-dropdown');
-
-		if (!container.is(':visible')) {
-			container.show();
-		} 
 	});
 
 });
