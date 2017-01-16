@@ -215,4 +215,13 @@ $(document).on('turbolinks:load', function() {
 
 	});
 
+
+	/*************************************************
+	*******		user-info-img-uploader     	**********
+	*************************************************/
+	
+	$( "#user-info-img-uploader > li:first-child" ).click(function() {
+		$('#choose-photo-btn')[0].click();
+	});
+
 });

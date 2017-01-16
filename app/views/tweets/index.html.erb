@@ -11,7 +11,7 @@
 				<div class="col-md-4">
 
 					<!-- <!% if current_user.image.exists? %> -->
-						<%= link_to image_tag current_user.image.url(:thumb), class: "thumb-image-home" %>
+					<%= link_to image_tag current_user.image.url(:thumb), class: "thumb-image-home" %>
 					<!-- <!% else %> -->
 						<!-- <!%= form_for current_user, html: { multipart: true } do |f| %>
 							<!%= f.file_field :image %>
@@ -19,14 +19,15 @@
 						<!% end %> -->
 					<!-- <!% end %> -->
 
-					<div id="navbar-dropdown2">
-		            	<li>
+					<div id="user-info-img-uploader">
+		            	<li class="text-center">
+		            		<span>Upload photo</span>
 		            		<%= form_for current_user, html: { multipart: true } do |f| %>
-								<%= f.file_field :image %>
-								<%= f.submit %>
+								<%= f.file_field :image, id: 'choose-photo-btn' %>
+								<%= f.submit :image, id: 'choose-photo-submit-btn' %>
 							<% end %>
 		            	</li>
-		            	<li><h4>Cancel</h4></li>
+		            	<li class="text-center"><span>Cancel</span></li>
 		            </div>
 
 				</div>

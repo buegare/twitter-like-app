@@ -51,3 +51,60 @@
 		right: 20px;
 	}
 }
+
+@mixin arrow-on-top($top, $right, $color) {
+	position: absolute;
+    right: $right;
+	top: $top;
+    border-style: solid;
+    border-width: 0px 12px 10px 12px;
+    border-color: $color transparent;
+    content: "";
+}
+
+#user-info-img-uploader {
+	position: absolute;
+	width: 220px;
+	top: 30px;
+	right: -60px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	border: 1px #eee solid;
+	background-color: white;
+	border-radius: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	z-index: 1;
+	color: #707e88;
+	cursor: pointer;
+	//display: none;
+
+	&:after { @include arrow-on-top(-9px, 95px, #FFFFFF); }
+
+	&:before { @include arrow-on-top(-10px, 95px, #eee); }
+
+	li {
+		list-style: none;
+		height: 45px;
+
+		span {
+			font-size: 14px;
+			position: relative;
+			top: 13px;
+		}
+
+		&:first-child { border-bottom: 1px #eee solid; }
+
+		&:hover { 
+			background-color: #1b95e0;
+			color: white;
+		}
+	}
+}
+
+#choose-photo-btn {
+	display: none;
+}
+
+#choose-photo-submit-btn {
+	display: none;
+}
