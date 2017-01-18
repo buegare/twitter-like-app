@@ -6,6 +6,11 @@ class User < ApplicationRecord
                 default_url: "image.png",
   							url: "/assets/users/:id/:style/:basename.:extension",
   							path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+
+  has_attached_file :bigger_image, styles: { large: "1600x900>"},
+                url: "/assets/users/:id/:style/:basename.:extension",
+                path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+  
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   has_many :tweets

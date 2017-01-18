@@ -5,6 +5,16 @@
 	border-radius: 5px;
 	border: 1px solid #e1e8ed;
 	margin-right: 10px;
+
+	div.row:first-child {
+		min-height: 96px;
+		background-color: #1DA1F2;
+
+		a {
+			display: block !important;
+			height: 96px;
+		}
+	}
 }
 
 #user-info-user-name {
