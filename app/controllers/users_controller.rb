@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     end
 
 	def user_params
-      params.require(:user).permit(:image)
+      params.require(:user).permit(:image, :bigger_image)
     end
 
     def show_actions
