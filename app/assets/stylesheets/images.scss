@@ -27,6 +27,11 @@ $border: solid 3px white;
 	@include images-common-size(70px, 70px);
 	@include images-common-border-and-position(25px, -5px);
 	border: $border;
+	cursor: pointer;
+
+	&:hover {
+		border: solid 3px #1b95e0;
+	}
 }
 
 .medium-image { 
@@ -35,20 +40,38 @@ $border: solid 3px white;
 	border-top-right-radius: 5px;
 }
 
-#tweet-creation-box-image {
+#tweet-creation-box-image-owl {
 	@include images-common-size(48px, 48px);
 	position: relative;
 	top: 8px;
 	left: 0px;
 }
 
-#nav-bar-image {
-	@include images-common-size(41px, 41px);
+#tweet-creation-box-image-user {
+	@include images-common-size(32px, 32px);
+	position: relative;
+	top: 11px;
+	left: 10px;
+	border-radius: 5px;
+}
+
+.nav-bar-image {
 	position: relative;
 	bottom: -11px;
 	cursor: pointer;
 	float: right;
 	right: 90px;
+}
+
+#nav-bar-image-owl {
+	@extend .nav-bar-image;
+	@include images-common-size(41px, 41px);
+}
+
+#nav-bar-image-user {
+	@extend .nav-bar-image;
+	@include images-common-size(32px, 32px);
+	border-radius: 5px;
 }
 
 .search-suggestion-box-image {
@@ -61,4 +84,8 @@ $border: solid 3px white;
 	margin-top: -45px;
 	float: right;
 	margin-right: 495px;
+}
+
+#img-target {
+	@include images-common-size(450px, 568px);
 }

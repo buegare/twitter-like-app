@@ -76,7 +76,7 @@
 	z-index: 1;
 	color: #707e88;
 	cursor: pointer;
-	//display: none;
+	display: none;
 
 	&:after { @include arrow-on-top(-9px, 95px, #FFFFFF); }
 
@@ -101,10 +101,6 @@
 	}
 }
 
-#choose-photo-btn {
-	display: none;
-}
-
-#choose-photo-submit-btn {
+#choose-photo-btn, #choose-photo-submit-btn{
 	display: none;
 }

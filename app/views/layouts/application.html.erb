@@ -38,7 +38,12 @@
               </form>
 
               <%= render 'users/user_lookup' %>
-              <%= image_tag("owl.png", id: "nav-bar-image") %>
+
+              <% if current_user.image.exists? %>
+                <%= image_tag current_user.image.url(:thumb), id: "nav-bar-image-user" %>
+              <% else %>
+                <%= image_tag("owl.png", id: "nav-bar-image-owl") %>
+              <% end %>
             </div>
 
             <div id="navbar-dropdown">
