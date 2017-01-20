@@ -89,3 +89,12 @@ $border: solid 3px white;
 #img-target {
 	@include images-common-size(450px, 568px);
 }
+
+#tweet-area-attachments-target {
+	@include images-common-size(115px, 115px);
+	border-radius: 6px;
+	position: relative;
+	left: 10px;
+	bottom: 69px;
+	display: none;
+}

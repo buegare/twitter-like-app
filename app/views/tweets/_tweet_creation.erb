@@ -11,9 +11,18 @@
 			<%= f.text_area :body, placeholder: "What's going on?", class: 'form-control', id: 'txt-area' %>
 		</div>
 
-		<div class="row">
+		<div class="row" id="tweet-area-attachments">
+			<img id="tweet-area-attachments-target" src="#" />
+		</div>
+
+		<div class="row" id="tweet-area-options">
 			<div class="col-md-6">
-				<span class="glyphicon glyphicon-camera"></span>
+				<span class="glyphicon glyphicon-camera" id="camera"></span>
+
+				<%= form_for current_user, html: { multipart: true } do |f| %>
+					<%= f.file_field :photo, id: 'tweet-creaton-choose-photo-btn' %>
+					<%= f.submit :upload, id: 'tweet-creaton-choose-photo-submit-btn' %>
+				<% end %>
 			</div>
 			<div class="col-md-6">
 				<%= f.submit 'Tweet', class: 'btn btn-info', id: 'tweet-btn' %>

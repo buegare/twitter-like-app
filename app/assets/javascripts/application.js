@@ -18,23 +18,36 @@
 
 $(document).on('turbolinks:load', function() {
 
+	/*************************************************
+	*******		Functions           		**********
+	*************************************************/
+
+
+	function IMGPreview(input, location) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(location).attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+
 	
 	/*************************************************
 	*******		Tweet creation area 		**********
 	*************************************************/
 	
-	// hide button and counter
-
-	$("#tweet-btn").hide();
-	$("#counter").hide();
-
 	// make text area expand, button and counter to show on click
-	$( "#txt-area" ).click(function() {
-	  $(this).css( "height", "80px" );
+	$( "#txt-area" ).on('click.tweet_creation_event', function() {
+	  $(this).css("height", "80px");
 	  $(this).addClass('txt-area-expanded');
 	  $( "#tweet-area-div" ).css( "height", "150px" );
 	  $("#tweet-btn").show().prop("disabled",true);
-	  $("#counter").show();
+	  $("#counter, #camera").show();
 	});
 
 
@@ -63,7 +76,55 @@ $(document).on('turbolinks:load', function() {
 		}
 
 	});
+
+
+	// $(document).mouseup(function (tweet_creation_event) {
+	// 	var txtarea = $("#txt-area");
+	//     var tweetbtn = $("#tweet-btn");
+	//     var camera = $("#camera");
+
+	// 	if (!txtarea.is(tweet_creation_event.target) && !tweetbtn.is(tweet_creation_event.target) && !camera.is(tweet_creation_event.target)) {
+	//         txtarea.css("height", "36px");
+	//         $('#tweet-area-div').css("height", "58px");
+	//         tweetbtn.hide();
+	//         $("#counter").hide();
+	//         camera.hide();
+	//         e.stopPropagation();
+	//     }
+ //    });
+
+ 	$(document).on('mouseup.tweet_creation_event', function (e) {
+		var txtarea = $("#txt-area");
+	    var tweetbtn = $("#tweet-btn");
+	    var camera = $("#camera");
+
+		if (!txtarea.is(e.target) && !tweetbtn.is(e.target) && !camera.is(e.target)) {
+	        txtarea.css("height", "36px");
+	        $('#tweet-area-div').css("height", "58px");
+	        tweetbtn.hide();
+	        $("#counter").hide();
+	        camera.hide();
+	        e.stopPropagation();
+	    }
+    });
 	
+	$("#camera").click(function() {
+		$('#tweet-creaton-choose-photo-btn').click();
+	});
+
+	$("#tweet-creaton-choose-photo-btn").change(function() {
+		IMGPreview(this, '#tweet-area-attachments-target');
+		$("#tweet-area-div").css("height", "312px");
+		$('#tweet-area-options').css('margin-top', '80px');
+		$('#tweet-area-attachments, #tweet-area-attachments-target').show();
+		$(document).unbind('mouseup.tweet_creation_event');
+		$("#txt-area").unbind('click.tweet_creation_event');
+	});
+
+	// $("#tweet-btn").click(function() {
+	// 	$('#tweet-creaton-choose-photo-submit-btn').click();
+	// });
+
 	/*************************************************
 	*******		navbar links        		**********
 	*************************************************/
@@ -113,7 +174,7 @@ $(document).on('turbolinks:load', function() {
 	*******		Search box suggestions 		**********
 	*************************************************/
 
-	$(document).mouseup(function (e) {
+	$(document).mouseup(function(e) {
 	    var container = $("#search-suggestions-box");
 
 	    // if the target of the click isn't the container...
@@ -122,18 +183,6 @@ $(document).on('turbolinks:load', function() {
 	        container.hide();
 	        e.stopPropagation();
 	    };
-
-	    var txtarea = $("#txt-area");
-	    var tweetbtn = $("#tweet-btn");
-
-		if (!txtarea.is(e.target) && !tweetbtn.is(e.target)) {
-	        txtarea.css("height", "36px");
-	        $('#tweet-area-div').css("height", "58px");
-	        tweetbtn.hide();
-	        $("#counter").hide();
-	        e.stopPropagation();
-	    }
-
 	});	
 
 	/*************************************************
@@ -247,20 +296,8 @@ $(document).on('turbolinks:load', function() {
 		$('#choose-photo-btn').click();
 	});
 
-	function IMGPreview(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#img-target').attr('src', e.target.result);
-            }
-            
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-
 	$('#choose-photo-btn').change(function(event) {
-		IMGPreview(this);
+		IMGPreview(this, '#img-target');
 		$('#user-info-img-preview').modal();
 	});
 

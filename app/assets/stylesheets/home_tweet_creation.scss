@@ -6,28 +6,56 @@
 	margin-left: 0px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+}
 
-	div:last-child {
-				
-		div {
-			position: relative;
-			top: 13px;
-			right: 10px;
-		}
+#tweet-area-options {
 
-		span {
+	div:first-child {
+		position: relative;
+		top: 18px;
+		right: 10px;
+
+		#camera {
 			font-size: 25px;
 			left: 76px;
 			top: 6px;
-			padding: 5px 9px 5px 9px;
+			padding: 3px 9px 3px 9px;
 			border-radius: 5px;
 			color: #2e9bc3;
+			display: none;
 
 			&:hover {
 				cursor: pointer;
 				border: 1px solid #2e9bc3;
-				padding: 4px 8px 4px 8px;
-			}
+				padding: 2px 8px 2px 8px;
+			}			
+		}
+
+		input {
+			display: none;
+		}
+	}
+
+	div:last-child {
+		position: relative;
+		top: 13px;
+		right: 10px;
+
+		#tweet-btn {
+			float: right;
+			margin-top: 5px;
+			height: 38px;
+			width: 97px;
+			display: none;
+		}
+
+		#counter {
+			float: right;
+			position: relative;
+			right: 10px;
+			top: 13px;
+			color: #707e88;
+			display: none;
 		}
 	}
 }
@@ -41,7 +69,8 @@
 	position: relative;
 	left: -45px;
 	top: 9px;
-	border-radius: 2px;
+	border-radius: 2px 2px 0px 0px;
+	border-color: #A4D9F9;
 	resize: none;
 
 	&::-webkit-input-placeholder { /* WebKit browsers */
@@ -66,17 +95,14 @@
 		color: #ccd6dd !important;
 }
 
-#tweet-btn {
-	float: right;
-	margin-top: 5px;
-	height: 38px;
-	width: 97px;
-}
-
-#counter {
-	float: right;
+#tweet-area-attachments {
+	background-color: #f1f1f1;
+	border: 1px solid #A4D9F9;
+	width: 506px;
+	height: 164px;
 	position: relative;
-	right: 10px;
-	top: 13px;
-	color: #707e88;
+	left: 82px;
+	top: 88px;
+	border-radius: 0px 0px 2px 2px;
+	display: none;
 }
