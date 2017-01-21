@@ -9,6 +9,8 @@
 	div.row:first-child {
 		min-height: 96px;
 		background-color: #1DA1F2;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
 
 		a {
 			display: block !important;

@@ -41,16 +41,26 @@ $(document).on('turbolinks:load', function() {
 	*******		Tweet creation area 		**********
 	*************************************************/
 	
+	function ClickTweetCreationEvent() {
+		$('#txt-area').css("height", "80px");
+		$('#txt-area').addClass('txt-area-expanded');
+		$( "#tweet-area-div" ).css( "height", "150px" );
+		$("#tweet-btn").show().prop("disabled",true);
+		$("#counter, #camera").show();
+	};
+
 	// make text area expand, button and counter to show on click
-	$( "#txt-area" ).on('click.tweet_creation_event', function() {
-	  $(this).css("height", "80px");
-	  $(this).addClass('txt-area-expanded');
-	  $( "#tweet-area-div" ).css( "height", "150px" );
-	  $("#tweet-btn").show().prop("disabled",true);
-	  $("#counter, #camera").show();
-	});
+	// $( "#txt-area" ).on('click.tweet_creation_event', function() {
+	//   $(this).css("height", "80px");
+	//   $(this).addClass('txt-area-expanded');
+	//   $( "#tweet-area-div" ).css( "height", "150px" );
+	//   $("#tweet-btn").show().prop("disabled",true);
+	//   $("#counter, #camera").show();
+	// });
 
+	$( "#txt-area" ).on('click.tweet_creation_event', ClickTweetCreationEvent);
 
+	// Change counter and enable/disable button
 	$( '#txt-area' ).keyup(function(e) {
 		$character = $('#txt-area').val().length;
 
@@ -78,22 +88,22 @@ $(document).on('turbolinks:load', function() {
 	});
 
 
-	// $(document).mouseup(function (tweet_creation_event) {
-	// 	var txtarea = $("#txt-area");
-	//     var tweetbtn = $("#tweet-btn");
-	//     var camera = $("#camera");
+ 	// $(document).on('mouseup.tweet_creation_event', function (e) {
+		// var txtarea = $("#txt-area");
+	 //    var tweetbtn = $("#tweet-btn");
+	 //    var camera = $("#camera");
 
-	// 	if (!txtarea.is(tweet_creation_event.target) && !tweetbtn.is(tweet_creation_event.target) && !camera.is(tweet_creation_event.target)) {
-	//         txtarea.css("height", "36px");
-	//         $('#tweet-area-div').css("height", "58px");
-	//         tweetbtn.hide();
-	//         $("#counter").hide();
-	//         camera.hide();
-	//         e.stopPropagation();
-	//     }
- //    });
+		// if (!txtarea.is(e.target) && !tweetbtn.is(e.target) && !camera.is(e.target)) {
+	 //        txtarea.css("height", "36px");
+	 //        $('#tweet-area-div').css("height", "58px");
+	 //        tweetbtn.hide();
+	 //        $("#counter").hide();
+	 //        camera.hide();
+	 //        e.stopPropagation();
+	 //    }
+  //   });
 
- 	$(document).on('mouseup.tweet_creation_event', function (e) {
+  function MouseUpTweetCreationEvent(e) {
 		var txtarea = $("#txt-area");
 	    var tweetbtn = $("#tweet-btn");
 	    var camera = $("#camera");
@@ -106,14 +116,18 @@ $(document).on('turbolinks:load', function() {
 	        camera.hide();
 	        e.stopPropagation();
 	    }
-    });
+    }
+
+  $(document).on('mouseup.tweet_creation_event', MouseUpTweetCreationEvent);
 	
+	// Activate the file button
 	$("#camera").click(function() {
 		$('#tweet-creaton-choose-photo-btn').click();
 	});
 
 	$("#tweet-creaton-choose-photo-btn").change(function() {
 		IMGPreview(this, '#tweet-area-attachments-target');
+		$('#remove-photo').show();
 		$("#tweet-area-div").css("height", "312px");
 		$('#tweet-area-options').css('margin-top', '80px');
 		$('#tweet-area-attachments, #tweet-area-attachments-target').show();
@@ -121,9 +135,16 @@ $(document).on('turbolinks:load', function() {
 		$("#txt-area").unbind('click.tweet_creation_event');
 	});
 
-	// $("#tweet-btn").click(function() {
-	// 	$('#tweet-creaton-choose-photo-submit-btn').click();
-	// });
+	$('#remove-photo').click(function() {
+		$('#tweet-area-attachments-target, #remove-photo').fadeOut('slow', function() {
+			$('#tweet-area-attachments').hide();
+			$('#tweet-creaton-choose-photo-btn').val('')
+			$("#tweet-area-div").css('height', '150px');
+			$(document).bind('mouseup.tweet_creation_event', MouseUpTweetCreationEvent);
+			$("#txt-area").bind('click.tweet_creation_event', ClickTweetCreationEvent);
+		});
+		
+	});
 
 	/*************************************************
 	*******		navbar links        		**********

@@ -1,9 +1,13 @@
 <%= render 'show_partial' %>
 
 	<div class="col-md-4 feed">
-		<% @user.tweets.each do |tweet| %>
+		<% @user.tweets.order(created_at: :desc).each do |tweet| %>
 			<h6><strong><%= tweet.user.fullname %></strong> <%= tweet.user.username %> <%= time_ago_in_words(tweet.created_at) %> ago</h6>
 				<p><%= tweet.body %></p>
+
+				<% if tweet.photo.exists? %>
+                	<%= image_tag tweet.photo.url(:medium) %>
+				<% end %> 
 		<% end %>
 	</div>
 
