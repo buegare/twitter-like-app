@@ -40,7 +40,7 @@
               <%= render 'users/user_lookup' %>
 
               <% if current_user.image.exists? %>
-                <%= image_tag current_user.image.url(:thumb), id: "nav-bar-image-user" %>
+                <div id="nav-bar-image-user" style="background-image: url(<%= current_user.image.url(:thumb) %>);"></div>
               <% else %>
                 <%= image_tag("owl.png", id: "nav-bar-image-owl") %>
               <% end %>

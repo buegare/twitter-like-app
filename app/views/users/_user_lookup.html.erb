@@ -3,7 +3,7 @@
 		<% @users_found.each do |uf| %>
 			<li>
 				<%= link_to user_path(uf), class: "search-suggestions-box-link" do %>
-					<%= image_tag uf.image.url(:thumb), class: "search-suggestion-box-image" %>
+					<div class="search-suggestion-box-image" style="background-image: url(<%= uf.image.url(:thumb) %>);"></div>
 					<strong><%= uf.fullname %></strong>
 			    	<small><%= uf.username %></small>
 			    	<h6><%= check_friendship_status(uf) %></h6>

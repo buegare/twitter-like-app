@@ -1,21 +1,21 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-3" id="user-info">
-			<div class="row">
-				<% if current_user.bigger_image.exists? %>
-                	<%= link_to user_path(current_user) do  %>
-						<%= image_tag current_user.bigger_image.url(:large), class: "medium-image" %>
-					<% end %>
-              	<% else %>
+			<% if current_user.bigger_image.exists? %>
+				<div class="row" id="upper-part-with-img" style="background-image: url(<%= current_user.bigger_image.url(:large) %>);">
 					<%= link_to '', user_path(current_user) %>
-				<% end %>              	
-			</div>
+				</div>
+            <% else %>
+            	<div class="row" id="upper-part-no-img">
+					<%= link_to '', user_path(current_user) %>
+				</div>
+			<% end %>              	
 
 			<div class="row">
 				<div class="col-md-4">
 
 					<!-- <!% if current_user.image.exists? %> -->
-						<%= image_tag current_user.image.url(:thumb), class: "thumb-image-home" %>
+					<div id="user-info-thumb-img" style="background-image: url(<%= current_user.image.url(:medium) %>);"></div>
 					<!-- <!% else %> -->
 						<!-- <!%= form_for current_user, html: { multipart: true } do |f| %>
 							<!%= f.file_field :image %>
@@ -69,7 +69,7 @@
 				<div class="row feed">
 					<div class="col-md-2">
 						<%= link_to user_path(tweet.user) do  %>
-							<%= image_tag tweet.user.image.url(:thumb), class: "feed-image" %>
+							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) %>);"></div>
 						<% end %>
 					</div>
 					<div class="col-md-10">

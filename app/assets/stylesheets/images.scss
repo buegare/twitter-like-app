@@ -12,32 +12,10 @@ $border: solid 3px white;
 	position: relative;
 }
 
-.feed-image {
-	@include images-common-size(48px, 48px);
-	@include images-common-border-and-position(-10px, -5px);
-}
-
 .thumb-image { 
 	@include images-common-size(70px, 70px);
 	@include images-common-border-and-position(20px, 15px);
 	border: $border;
-}
-
-.thumb-image-home { 
-	@include images-common-size(70px, 70px);
-	@include images-common-border-and-position(25px, -5px);
-	border: $border;
-	cursor: pointer;
-
-	&:hover {
-		border: solid 3px #1b95e0;
-	}
-}
-
-.medium-image { 
-	@include images-common-size(96px, 288px);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
 }
 
 #tweet-creation-box-image-owl {
@@ -55,28 +33,13 @@ $border: solid 3px white;
 	border-radius: 5px;
 }
 
-.nav-bar-image {
+#nav-bar-image-owl {
 	position: relative;
 	bottom: -11px;
 	cursor: pointer;
 	float: right;
 	right: 90px;
-}
-
-#nav-bar-image-owl {
-	@extend .nav-bar-image;
 	@include images-common-size(41px, 41px);
-}
-
-#nav-bar-image-user {
-	@extend .nav-bar-image;
-	@include images-common-size(32px, 32px);
-	border-radius: 5px;
-}
-
-.search-suggestion-box-image {
-    @include images-common-size(32px, 32px);
-    border-radius: 4px;
 }
 
 #navbar-signin-signout-image {

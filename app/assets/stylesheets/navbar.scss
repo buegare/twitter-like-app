@@ -87,13 +87,9 @@
 	    strong, small, h6 {	color: white; }
 	}
 
-	strong {
-		@include search-suggestions-box-common(8px, black);
-	}
+	strong { @include search-suggestions-box-common(14px, black); }
 
-	small {
-		@include search-suggestions-box-common(8px, #707e88);
-	}
+	small {	@include search-suggestions-box-common(14px, #707e88); }
 
 	h6 {
 		@include search-suggestions-box-common(25px, #707e88);
@@ -148,4 +144,28 @@
 			}
 		}
 	}
+}
+
+#nav-bar-image-user {
+	height: 32px;
+	width: 32px;
+	position: relative;
+	bottom: -11px;
+	right: 90px;
+	border-radius: 5px;
+	cursor: pointer;
+	float: right;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.search-suggestion-box-image {
+    height: 32px;
+    width: 32px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: inline-block;
 }
