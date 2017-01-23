@@ -25,14 +25,6 @@ $border: solid 3px white;
 	left: 0px;
 }
 
-#tweet-creation-box-image-user {
-	@include images-common-size(32px, 32px);
-	position: relative;
-	top: 11px;
-	left: 10px;
-	border-radius: 5px;
-}
-
 #nav-bar-image-owl {
 	position: relative;
 	bottom: -11px;
@@ -47,17 +39,4 @@ $border: solid 3px white;
 	margin-top: -45px;
 	float: right;
 	margin-right: 495px;
-}
-
-#img-target {
-	@include images-common-size(450px, 568px);
-}
-
-#tweet-area-attachments-target {
-	@include images-common-size(115px, 115px);
-	border-radius: 6px;
-	position: relative;
-	left: 10px;
-	bottom: 69px;
-	display: none;
 }

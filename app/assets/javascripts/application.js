@@ -22,19 +22,17 @@ $(document).on('turbolinks:load', function() {
 	*******		Functions           		**********
 	*************************************************/
 
-
-	function IMGPreview(input, location) {
+ 	function IMGPreview(input, location) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(location).attr('src', e.target.result);
+                //$(location).attr('src', e.target.result);
+                $(location).css('background-image', 'url(' + e.target.result + ')');
             }
             
             reader.readAsDataURL(input.files[0]);
         }
     }
-
-
 
 	
 	/*************************************************

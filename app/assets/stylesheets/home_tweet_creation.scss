@@ -103,17 +103,43 @@
 	border-radius: 0px 0px 2px 2px;
 	display: none;
 
-	#remove-photo {
-		border: solid black 1px;
-		background-color: black;
-		color: white;
-		font-size: 14px;
-		border-radius: 11px;
-		padding: 1px 1px 0px 1px;
-		position: absolute;
-		left: 104px;
-		top: 12px;
-		z-index: 1;
-		cursor: pointer;
+	#tweet-area-attachments-target {
+		height: 115px;
+		width: 115px;
+		border-radius: 6px;
+		position: relative;
+		left: 10px;
+		bottom: -9px;
+		display: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		#remove-photo {
+			border: solid black 1px;
+			background-color: black;
+			color: white;
+			font-size: 14px;
+			border-radius: 11px;
+			padding: 1px 1px 0px 1px;
+			position: absolute;
+			left: 94px;
+			top: 3px;
+			z-index: 1;
+			cursor: pointer;
+		}
 	}
+}
+
+
+#tweet-creation-box-image-user {
+	height: 32px;
+	width: 32px;
+	position: relative;
+	top: 11px;
+	left: 10px;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
