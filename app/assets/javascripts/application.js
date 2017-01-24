@@ -26,7 +26,6 @@ $(document).on('turbolinks:load', function() {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                //$(location).attr('src', e.target.result);
                 $(location).css('background-image', 'url(' + e.target.result + ')');
             }
             
