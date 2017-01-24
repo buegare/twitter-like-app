@@ -149,3 +149,19 @@
 	background-position: center;
 	background-size: cover;
 }
+
+#user-info-owl {
+	height: 72px;
+	width: 72px;
+	border: solid 3px white;
+	cursor: pointer;
+	position: relative;
+	bottom: 25px;
+	left: -5px;
+	border-radius: 7px;
+	background-color: #1b95e0;
+
+	&:hover {
+		box-shadow: 0 0 3pt 1pt #1b95e0;
+	}
+}

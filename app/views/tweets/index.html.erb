@@ -14,14 +14,11 @@
 			<div class="row">
 				<div class="col-md-4">
 
-					<!-- <!% if current_user.image.exists? %> -->
-					<div id="user-info-thumb-img" style="background-image: url(<%= current_user.image.url(:medium) %>);"></div>
-					<!-- <!% else %> -->
-						<!-- <!%= form_for current_user, html: { multipart: true } do |f| %>
-							<!%= f.file_field :image %>
-							<!%= f.submit %>
-						<!% end %> -->
-					<!-- <!% end %> -->
+					<% if current_user.image.exists? %>
+						<div id="user-info-thumb-img" style="background-image: url(<%= current_user.image.url(:medium) %>);"></div>
+					<% else %>
+						<%= image_tag("owl.png", id: "user-info-owl") %>
+					<% end %>
 
 					<div id="user-info-img-uploader">
 		            	<li class="text-center">
@@ -84,7 +81,7 @@
 							<p><%= tweet.body %></p>
 
 							<% if tweet.photo.exists? %>
-			                	<div class="tweet-images" style="background-image: url(<%= tweet.photo.url(:medium) %>);"></div>
+			                	<div class="tweet-images" style="background-image: url(<%= tweet.photo.url(:large) %>);"></div>
 							<% end %>
 						</div>
 					</div>
