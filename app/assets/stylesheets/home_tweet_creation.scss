@@ -59,7 +59,6 @@
 
 #txt-area {
 	$placeholder-color: #1b95e0;
-	$placeholder-line-height: 1.5em;
 
 	height: 36px;
 	width: 513px;
@@ -70,22 +69,10 @@
 	border-color: #A4D9F9;
 	resize: none;
 
-	&::-webkit-input-placeholder { /* WebKit browsers */
-	  color: $placeholder-color;
-	  line-height: $placeholder-line-height;
-	}
-	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	  color: $placeholder-color;
-	  line-height: $placeholder-line-height;
-	}
-	&::-moz-placeholder { /* Mozilla Firefox 19+ */
-	  color: $placeholder-color;
-	  line-height: $placeholder-line-height;
-	}
-	&:-ms-input-placeholder { /* Internet Explorer 10+ */
-	  color: $placeholder-color;
-	  line-height: $placeholder-line-height;
-	}
+	&::-webkit-input-placeholder { color: $placeholder-color; } /* WebKit browsers */
+	&:-moz-placeholder { color: $placeholder-color; } /* Mozilla Firefox 4 to 18 */
+	&::-moz-placeholder { color: $placeholder-color; } /* Mozilla Firefox 19+ */
+	&:-ms-input-placeholder { color: $placeholder-color; } /* Internet Explorer 10+ */
 }
 
 .txt-area-expanded::-moz-placeholder {

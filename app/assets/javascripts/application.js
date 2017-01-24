@@ -46,15 +46,6 @@ $(document).on('turbolinks:load', function() {
 		$("#counter, #camera").show();
 	};
 
-	// make text area expand, button and counter to show on click
-	// $( "#txt-area" ).on('click.tweet_creation_event', function() {
-	//   $(this).css("height", "80px");
-	//   $(this).addClass('txt-area-expanded');
-	//   $( "#tweet-area-div" ).css( "height", "150px" );
-	//   $("#tweet-btn").show().prop("disabled",true);
-	//   $("#counter, #camera").show();
-	// });
-
 	$( "#txt-area" ).on('click.tweet_creation_event', ClickTweetCreationEvent);
 
 	// Change counter and enable/disable button
@@ -85,21 +76,6 @@ $(document).on('turbolinks:load', function() {
 	});
 
 
- 	// $(document).on('mouseup.tweet_creation_event', function (e) {
-		// var txtarea = $("#txt-area");
-	 //    var tweetbtn = $("#tweet-btn");
-	 //    var camera = $("#camera");
-
-		// if (!txtarea.is(e.target) && !tweetbtn.is(e.target) && !camera.is(e.target)) {
-	 //        txtarea.css("height", "36px");
-	 //        $('#tweet-area-div').css("height", "58px");
-	 //        tweetbtn.hide();
-	 //        $("#counter").hide();
-	 //        camera.hide();
-	 //        e.stopPropagation();
-	 //    }
-  //   });
-
   function MouseUpTweetCreationEvent(e) {
 		var txtarea = $("#txt-area");
 	    var tweetbtn = $("#tweet-btn");
@@ -107,6 +83,7 @@ $(document).on('turbolinks:load', function() {
 
 		if (!txtarea.is(e.target) && !tweetbtn.is(e.target) && !camera.is(e.target)) {
 	        txtarea.css("height", "36px");
+	        txtarea.removeClass('txt-area-expanded');
 	        $('#tweet-area-div').css("height", "58px");
 	        tweetbtn.hide();
 	        $("#counter").hide();
