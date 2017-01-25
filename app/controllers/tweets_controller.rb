@@ -10,10 +10,10 @@ class TweetsController < ApplicationController
   		@tweet = current_user.tweets.build(tweet_params)
 
   		if @tweet.save
-  			flash[:success] = "New Tweet created successfuly!"
+  			flash[:msg] = "New Tweet created successfuly!"
 			redirect_to user_path(current_user)
 		else
-			flash[:danger] = "An error has occurred!"
+			flash[:msg] = "An error has occurred! Your Tweet couldn't be created."
 			redirect_to authenticated_root_path()
 		end
   	end

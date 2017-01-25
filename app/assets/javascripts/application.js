@@ -299,6 +299,10 @@ $(document).on('turbolinks:load', function() {
 	$( "#img-save-btn" ).click(function() {
 		$('#choose-photo-submit-btn').click();
 	});
-	
 
+	/*************************************************
+	*******		info message            	**********
+	*************************************************/
+	
+	$('.msg').delay(2000).fadeOut('slow');
 });

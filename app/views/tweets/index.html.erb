@@ -1,4 +1,9 @@
 <div class="container">
+	
+	<% if flash[:msg] %>
+		<div class="msg"><%= flash[:msg] %></div>
+	<% end %>
+
 	<div class="row">
 		<div class="col-md-3" id="user-info">
 			<% if current_user.bigger_image.exists? %>

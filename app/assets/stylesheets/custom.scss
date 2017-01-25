@@ -28,3 +28,18 @@ body {
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
 }
+
+.msg {
+	background-color: #f5f8fa;
+	text-align: center;
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #e1e8ed;
+	position: absolute;
+	z-index: 10;
+	left: 25%;
+	bottom: 75%;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
