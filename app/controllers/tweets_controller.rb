@@ -13,7 +13,8 @@ class TweetsController < ApplicationController
   			flash[:success] = "New Tweet created successfuly!"
 			redirect_to user_path(current_user)
 		else
-			render 'new'
+			flash[:danger] = "An error has occurred!"
+			redirect_to authenticated_root_path()
 		end
   	end
 
