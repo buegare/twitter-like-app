@@ -271,7 +271,7 @@ $(document).on('turbolinks:load', function() {
 
 	$(document).mouseup(function (e) {
 	    var img_uploader_menu = $('#user-info-img-uploader');
-	    var user_info_img = $('#user-info-thumb-img');
+	    var user_info_img = $('#user-info-thumb-img, #user-info-owl');
 
 	    if (user_info_img.is(e.target) && !img_uploader_menu.is(':visible')) {
     		img_uploader_menu.show();
