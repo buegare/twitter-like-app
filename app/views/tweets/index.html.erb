@@ -71,7 +71,9 @@
 				<div class="row feed">
 					<div class="col-md-2">
 						<%= link_to user_path(tweet.user) do  %>
-							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) %>);"></div>
+							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) %>);">
+								<%= render 'users/user_info_hover' %>
+							</div>
 						<% end %>
 					</div>
 					<div class="col-md-10">

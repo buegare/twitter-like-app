@@ -305,4 +305,19 @@ $(document).on('turbolinks:load', function() {
 	*************************************************/
 	
 	$('.msg').delay(2000).fadeOut('slow');
+
+	/*************************************************
+	*******		home user info home        	**********
+	*************************************************/
+
+	$('.feed-image').hover(
+		function() {
+		    $('.user-info-hover-feed').show();
+		  },
+
+		function() {
+		    // $('.user-info-hover-feed').hide();
+		  }
+	);
+
 });
