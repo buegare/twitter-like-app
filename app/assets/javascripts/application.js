@@ -307,16 +307,28 @@ $(document).on('turbolinks:load', function() {
 	$('.msg').delay(2000).fadeOut('slow');
 
 	/*************************************************
-	*******		home user info home        	**********
+	*******		home user info hover       	**********
 	*************************************************/
 
 	$('.feed-image').hover(
+		function(e) {
+		    $(e.target.children[1]).slideDown('fast');
+		  },
+
+		function(e) {
+			timer = setTimeout(function(){
+			  $(e.target.children[1]).fadeOut();
+			}, 500);
+		}
+	);
+
+	$('.user-info-hover-feed').hover(
 		function() {
-		    $('.user-info-hover-feed').show();
+		    clearTimeout(timer);
 		  },
 
 		function() {
-		    // $('.user-info-hover-feed').hide();
+			$(this).fadeOut();
 		  }
 	);
 

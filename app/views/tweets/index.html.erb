@@ -1,19 +1,13 @@
 <div class="container">
 	
-	<% if flash[:msg] %>
-		<div class="msg"><%= flash[:msg] %></div>
-	<% end %>
-
 	<div class="row">
 		<div class="col-md-3" id="user-info">
-			<% if current_user.bigger_image.exists? %>
-				<div class="row" id="upper-part-with-img" style="background-image: url(<%= current_user.bigger_image.url(:large) %>);">
-					<%= link_to '', user_path(current_user) %>
-				</div>
-            <% else %>
-            	<div class="row" id="upper-part-no-img">
-					<%= link_to '', user_path(current_user) %>
-				</div>
+			<%= link_to user_path(current_user) do  %>
+				<% if current_user.bigger_image.exists? %>
+					<div class="row upper-part-with-img" style="background-image: url(<%= current_user.bigger_image.url(:large) %>);"></div>
+				<% else %>
+					<div class="row upper-part-no-img"></div>
+				<% end %>
 			<% end %>              	
 
 			<div class="row">
@@ -72,7 +66,7 @@
 					<div class="col-md-2">
 						<%= link_to user_path(tweet.user) do  %>
 							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) %>);">
-								<%= render 'users/user_info_hover' %>
+								<%= render 'users/user_info_hover', :tweet => tweet %>
 							</div>
 						<% end %>
 					</div>

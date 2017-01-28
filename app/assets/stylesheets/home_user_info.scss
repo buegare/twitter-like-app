@@ -11,19 +11,14 @@
 	min-height: 96px;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
-
-	a {
-		display: block !important;
-		height: 96px;
-	}
 }
 
-#upper-part-no-img {
+.upper-part-no-img {
 	@extend .upper-part;
 	background-color: #1DA1F2;
 }
 
-#upper-part-with-img {
+.upper-part-with-img {
 	@extend .upper-part;
 	background-repeat: no-repeat;
 	background-position: center;

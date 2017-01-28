@@ -1,57 +1,41 @@
 <div class="col-md-3 user-info-hover-feed">
-	<% if current_user.bigger_image.exists? %>
-		<div class="row" id="upper-part-with-img" style="background-image: url(<%= current_user.bigger_image.url(:large) %>);">
-			<%= link_to '', user_path(current_user) %>
-		</div>
-    <% else %>
-    	<div class="row" id="upper-part-no-img">
-			<%= link_to '', user_path(current_user) %>
-		</div>
-	<% end %>              	
+	<%= link_to user_path(tweet.user) do  %>
+		<% if tweet.user.bigger_image.exists? %>
+			<div class="row upper-part-with-img" style="background-image: url(<%= tweet.user.bigger_image.url(:large) %>);"></div>
+		<% else %>
+			<div class="row upper-part-no-img"></div>
+		<% end %>
+	<% end %>
+              	
 
 	<div class="row">
 		<div class="col-md-4">
-
-			<% if current_user.image.exists? %>
-				<div id="user-info-thumb-img" style="background-image: url(<%= current_user.image.url(:medium) %>);"></div>
-			<% else %>
-				<%= image_tag("owl.png", id: "user-info-owl") %>
+			<%= link_to user_path(tweet.user) do  %>
+				<% if tweet.user.image.exists? %>
+					<div id="user-info-thumb-img" style="background-image: url(<%= tweet.user.image.url(:medium) %>);"></div>
+				<% else %>
+					<%= image_tag("owl.png", id: "user-info-hover-owl") %>
+				<% end %>
 			<% end %>
-
-			<div id="user-info-img-uploader">
-            	<li class="text-center">
-            		<span>Upload photo</span>
-            	</li>
-            	<li class="text-center"><span>Cancel</span></li>
-            </div>
-			
-			<%= form_for current_user, html: { multipart: true } do |f| %>
-				<%= f.file_field :image, id: 'choose-photo-btn' %>
-				<%= f.submit :upload, id: 'choose-photo-submit-btn' %>
-			<% end %>
-
-        	<%= render 'image_preview' %>
-
-
 		</div>
-		<div class="col-md-8" id="user-info-user-name">
-			<h4><strong><%= link_to current_user.fullname, user_path(current_user)  %></strong></h4>
-			<h6><%= link_to current_user.username, user_path(current_user)  %></h6>
+		<div class="col-md-8" id="user-info--hover-user-name">
+			<h4><strong><%= link_to tweet.user.fullname, user_path(tweet.user)  %></strong></h4>
+			<h6><%= link_to tweet.user.username, user_path(tweet.user)  %></h6>
 		</div>
 	</div>
 	
 	<div class="row" id="user-info-stats">
 		<div class="col-md-4">
-			<span><%= link_to 'TWEETS', user_path(current_user) %></span>
-			<h4><%= current_user.tweets.count %></h4>
+			<span><%= link_to 'TWEETS', user_path(tweet.user) %></span>
+			<h4><%= tweet.user.tweets.count %></h4>
 		</div>
 		<div class="col-md-4">
-			<span><%= link_to 'FOLLOWING', show_following_path(current_user) %></span>
-			<h4><%= current_user.follows.count %></h4>
+			<span><%= link_to 'FOLLOWING', show_following_path(tweet.user) %></span>
+			<h4><%= tweet.user.follows.count %></h4>
 		</div>
 		<div class="col-md-4">
-			<span><%= link_to 'FOLLOWERS', show_followers_path(current_user) %></span>
-			<h4><%= current_user.followers.count %></h4>
+			<span><%= link_to 'FOLLOWERS', show_followers_path(tweet.user) %></span>
+			<h4><%= tweet.user.followers.count %></h4>
 		</div>
 	</div>
 </div>

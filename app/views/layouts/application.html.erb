@@ -55,6 +55,9 @@
       </div>
     <% end %>
 
+    <% if flash[:msg] %>
+      <div class="msg"><%= flash[:msg] %></div>
+    <% end %>
     <%= yield %>
 
 
