@@ -1,29 +1,44 @@
-#image_header {
-	height: 420px;
-	margin-top: -21px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-}
-
-.feed p{
-	word-wrap: break-word;
-}
-
-.margin-show-view {
+#info-bar {
 	position: relative;
-	bottom: 7px;
-	z-index: -1;
+    right: 15px;
+
+	div {
+		width: 100px;
+		height: 65px;
+		padding: 0px;
+		z-index: 0;
+
+		h3 {
+			position: relative;
+			bottom: 20px;
+			z-index: -1;
+			color: #1b95e0;
+		}
+	}
 }
 
-#medium-user-profile-image {
+#user-info-show {
 	position: absolute;
-    top: -160px;
-    left: 150px;
+    left: 430px;
+    top: -105px;
+    
+    div {
+	    height: 210px;
+	    width: 210px;
+	    background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		border-radius: 12px;
+	    border: 5px solid white;
+	}
+
+	h4 { font-weight: bold;	}
+
+	> :nth-child(3) { color: #707e88; }
 }
+
 
 .show-friendship-button {
-	margin-left: 250px;
 	margin-top: 10px;
 	width: 100px;
 	height: 40px;
@@ -61,13 +76,6 @@
 .info-bar-border-color {
 	border-bottom: 5px solid #1b95e0;
     transition: all .15s ease-in-out;
-}
-
-.info-bar-width-height-padding {
-	width: 100px;
-	height: 65px;
-	padding: 0px;
-	z-index: 0;
 }
 
 .info-bar-link {
