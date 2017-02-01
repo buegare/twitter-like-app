@@ -222,11 +222,20 @@ $(document).on('turbolinks:load', function() {
 			$(this).removeClass( "btn-default" );
 		  	$(this).addClass( "btn-primary" );
 		  	$(this).val("Following");
+		} else if ( $(this).val() === "Edit Profile" ) {
+			$('#overlay').show();
 		}
 	});
 
+	$("#edit-profile-button").click(function() {
+		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3').show();
+	});
 
-	/*************************************************
+	$('#profile-edit-cancel').click(function() {
+		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3').hide();
+	});
+
+	/*************************************************, 
 	*******		info-bar            		**********
 	*************************************************/
 

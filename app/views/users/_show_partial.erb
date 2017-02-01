@@ -1,23 +1,20 @@
-<div class="row" id="image_header" style="background-image: url(<%= @user.bigger_image.url(:large) %>);" ></div>
+<div class="row" id="image-header" style="background-image: url(<%= @user.bigger_image.url(:large) %>);" >
+	<div id="image-header-edit"></div>
+	<span class="glyphicon glyphicon-camera"></span>
+	<h3>Change your header photo</h3>
+</div>
 
 <div class="row info-bar-border">
 	
-	<!-- <div class="col-md-4">
-		<div id="medium-user-profile-image">
-			<span><!%= link_to image_tag @user.image.url(:medium), class: "img-thumbnail" %></span>
-			<h3><!%= @user.fullname %></h3>
-			<h4><!%= @user.username %></h4>
-			<br>
-			<h4>Joined <!%= @user.created_at.strftime("%B") %> <!%= @user.created_at.year %></h4>
-		</div>
-	</div> -->
-
 	<div class="col-md-4">
 		<div id="user-info-show">
 			<div style="background-image: url(<%= @user.image.url(:medium) %>);"></div>
 			<h4><%= @user.fullname %></h4>
 			<h5><%= @user.username %></h5>
 			<h5>Joined <%= @user.created_at.strftime("%B") %> <%= @user.created_at.year %></h5>
+			<div id="user-info-show-edit"></div>
+			<span class="glyphicon glyphicon-camera"></span>
+			<h3>Change your profile photo</h3>
 		</div>
 	</div>
 
@@ -40,7 +37,9 @@
 
 	<div class="col-md-4 friendship-button">
 		<% if current_user.id == @user.id %>
-			<button class="btn btn-default show-friendship-button">Edit Profile</button>
+			<button class="btn btn-default show-friendship-button" id="edit-profile-button">Edit Profile</button>
+			<button class="btn btn-default" id="profile-edit-cancel">Cancel</button>
+			<button class="btn btn-info" id="profile-edit-save">Save Changes</button>
 		<% else %>
 			<%= button_to get_actions(@user.id), handle_friendship_path(:user_id => @user.id), remote: true, class: "btn btn-default friendship-button-b show-friendship-button" %>
 		<% end %>

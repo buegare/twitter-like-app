@@ -21,8 +21,9 @@
 	position: absolute;
     left: 430px;
     top: -105px;
+    z-index: 999;
     
-    div {
+    > :first-child {
 	    height: 210px;
 	    width: 210px;
 	    background-repeat: no-repeat;
@@ -35,6 +36,36 @@
 	h4 { font-weight: bold;	}
 
 	> :nth-child(3) { color: #707e88; }
+
+	span {
+		font-size: 50px;
+		color: white;
+		position: absolute;
+    	left: 40%;
+    	top: 16%;
+    	display: none;
+	}
+
+	h3 {
+		color: white;
+		position: absolute;
+    	left: 17%;
+    	top: 23%;
+    	font-weight: bold;
+    	display: none;
+	}
+
+	#user-info-show-edit {
+		height: 200px;
+	    background-color: black;
+	    opacity: 0.6;
+	    position: relative;
+	    bottom: 293px;
+	    width: 200px;
+	    left: 5px;
+	    border-radius: 7px;
+	    display: none;
+	}
 }
 
 
@@ -85,4 +116,74 @@
         color: black;
 		text-decoration: none;
     }
+}
+
+// adds a layer on top of everything when the user clicks on the Edit Profile button
+#overlay {
+    background-color: #eee;
+    opacity: 0.8;
+    z-index: 997;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: none;
+}
+
+#image-header {
+	height: 570px;
+	margin-top: 50px;
+	background-color: #1DA1F2;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 998;
+
+	#image-header-edit {
+		height: 570px;
+    	background-color: black;
+    	opacity: 0.6;
+    	display: none;
+	}
+
+	span {
+		font-size: 50px;
+		color: white;
+		position: absolute;
+    	left: 50%;
+    	top: 78%;
+    	display: none;
+	}
+
+	h3 {
+		color: white;
+		position: absolute;
+    	left: 44%;
+    	top: 85%;
+    	font-weight: bold;
+    	display: none;
+	}
+}
+
+#profile-edit-cancel {
+	display: none;
+	position: relative;
+	z-index: 998;
+	right: 213px;
+    height: 40px;
+    width: 100px;
+    top: 5px;
+}
+
+#profile-edit-save {
+	display: none;
+	position: relative;
+	z-index: 998;
+	right: 208px;
+    height: 40px;
+    width: 120px;
+    top: 5px;
 }
