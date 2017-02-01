@@ -17,7 +17,6 @@
 			<div style="background-image: url(<%= @user.image.url(:medium) %>);"></div>
 			<h4><%= @user.fullname %></h4>
 			<h5><%= @user.username %></h5>
-			<br>
 			<h5>Joined <%= @user.created_at.strftime("%B") %> <%= @user.created_at.year %></h5>
 		</div>
 	</div>
