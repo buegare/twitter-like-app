@@ -341,4 +341,20 @@ $(document).on('turbolinks:load', function() {
 		  }
 	);
 
+
+	/*************************************************
+	*	user show img header and user img edit  ******
+	*************************************************/
+
+	$('#image-header-edit').click(function() {
+		$('#image-header-img-uploader').show();
+	});
+
+	$("#image-header-img-uploader li:first-child").click(function() {
+		$('#choose-photo-btn-img-header').click();
+	});
+
+	$("#choose-photo-btn-img-header").change(function() {
+		$('#choose-photo-submit-btn-img-header').click();
+	});
 });

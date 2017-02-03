@@ -44,6 +44,8 @@
     	left: 40%;
     	top: 16%;
     	display: none;
+
+    	&:hover { cursor: pointer; }
 	}
 
 	h3 {
@@ -53,6 +55,8 @@
     	top: 23%;
     	font-weight: bold;
     	display: none;
+
+    	&:hover { cursor: pointer; }
 	}
 
 	#user-info-show-edit {
@@ -65,6 +69,11 @@
 	    left: 5px;
 	    border-radius: 7px;
 	    display: none;
+
+	    &:hover {
+	    	border: solid 5px #1DA1F2;
+	    	cursor: pointer;
+	    }
 	}
 }
 
@@ -147,6 +156,11 @@
     	background-color: black;
     	opacity: 0.6;
     	display: none;
+
+    	&:hover {
+    		cursor: pointer;
+    		border: #1DA1F2 solid 5px;
+    	}
 	}
 
 	span {
@@ -156,6 +170,8 @@
     	left: 50%;
     	top: 78%;
     	display: none;
+
+    	&:hover { cursor: pointer; }
 	}
 
 	h3 {
@@ -165,6 +181,8 @@
     	top: 85%;
     	font-weight: bold;
     	display: none;
+
+    	&:hover { cursor: pointer; }
 	}
 }
 
@@ -186,4 +204,57 @@
     height: 40px;
     width: 120px;
     top: 5px;
+}
+
+@mixin arrow-on-top($top, $right, $color) {
+	position: absolute;
+    right: $right;
+	top: $top;
+    border-style: solid;
+    border-width: 0px 12px 10px 12px;
+    border-color: $color transparent;
+    content: "";
+}
+
+#image-header-img-uploader {
+	position: absolute;
+	width: 220px;
+	top: 500px;
+	right: 899px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	border: 1px #eee solid;
+	background-color: white;
+	border-radius: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	z-index: 1;
+	color: #707e88;
+	cursor: pointer;
+	display: none;
+
+	&:after { @include arrow-on-top(-9px, 95px, #FFFFFF); }
+
+	&:before { @include arrow-on-top(-10px, 95px, #eee); }
+
+	li {
+		list-style: none;
+		margin-top: 0px;
+    	padding-top: 1px;
+    	padding-bottom: 1px;
+
+		&:nth-child(3) {
+			border-bottom: 1px solid #eee;
+		    margin-top: 3px;
+		    margin-bottom: 4px;
+		}
+
+		&:hover { 
+			background-color: #1b95e0;
+			color: white;
+		}
+	}
+}
+
+#choose-photo-btn-img-header, #choose-photo-submit-btn-img-header {
+	display: none;
 }
