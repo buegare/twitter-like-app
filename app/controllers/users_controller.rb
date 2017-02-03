@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
     def update
 	    if @user.update(user_params)
-	      redirect_to authenticated_root_path()
+	      redirect_back(fallback_location: authenticated_root_path())
+	      flash[:msg] = "Image updated successfuly !"
 	    else
 	      render 'edit'
 	    end
