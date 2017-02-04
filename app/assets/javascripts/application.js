@@ -228,11 +228,13 @@ $(document).on('turbolinks:load', function() {
 	});
 
 	$("#edit-profile-button").click(function() {
+		$('#image-header').css('position', 'relative');
 		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3').show();
 	});
 
 	$('#profile-edit-cancel').click(function() {
-		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3').hide();
+		$('#image-header').css('position', '');
+		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3, #image-header-img-uploader, #show-user-profile-img-uploader').hide();
 	});
 
 	/*************************************************, 
@@ -346,8 +348,19 @@ $(document).on('turbolinks:load', function() {
 	*	user show img header and user img edit  ******
 	*************************************************/
 
-	$('#image-header-edit').click(function() {
-		$('#image-header-img-uploader').show();
+	// $('#image-header-edit, #image-header span, #image-header h3').click(function() {
+	// 	$('#image-header-img-uploader').show();
+	// });
+
+	$('#image-header-edit, #image-header span, #image-header h3').click(function() {
+			
+		if ( !$('#image-header-img-uploader').is(':visible') ) {
+			$('#image-header-img-uploader').show();
+			$('#show-user-profile-img-uploader').hide();
+		} else {
+			$('#image-header-img-uploader').hide();
+		}
+
 	});
 
 	$("#image-header-img-uploader li:first-child").click(function() {
@@ -357,4 +370,44 @@ $(document).on('turbolinks:load', function() {
 	$("#choose-photo-btn-img-header").change(function() {
 		$('#choose-photo-submit-btn-img-header').click();
 	});
+
+	$('#image-header-img-uploader li:last-child, #show-user-profile-img-uploader li:last-child').click(function() {
+		$('#image-header').css('position', '');
+		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3, #image-header-img-uploader, #show-user-profile-img-uploader').hide();
+	});
+
+
+	$('#image-header span, #image-header h3').hover(function () {
+	    $('#image-header-edit').css('border', '#1DA1F2 solid 5px');
+	}, function () {
+	    $('#image-header-edit').css('border', '');
+	});
+
+	// user profile img edit
+
+	$('#user-info-show span, #user-info-show h3').hover(function () {
+	    $('#user-info-show-edit').css('border', '#1DA1F2 solid 5px');
+	}, function () {
+	    $('#user-info-show-edit').css('border', '');
+	});
+
+	$('#user-info-show-edit, #user-info-show span, #user-info-show h3').click(function() {
+		
+		if ( !$('#show-user-profile-img-uploader').is(':visible') ) {
+			$('#show-user-profile-img-uploader').show();
+			$('#image-header-img-uploader').hide();
+		} else {
+			$('#show-user-profile-img-uploader').hide();
+		}
+
+	});
+
+	$("#show-user-profile-img-uploader li:first-child").click(function() {
+		$('#choose-photo-btn-user-profile-img').click();
+	});
+
+	$("#choose-photo-btn-user-profile-img").change(function() {
+		$('#choose-photo-submit-btn-user-profile-img').click();
+	});
+
 });
