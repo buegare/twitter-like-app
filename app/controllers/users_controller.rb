@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:edit, :update ]
+	before_action :set_user, only: [:edit, :update, :remove_image]
 	before_action :show_actions, only: [:show, :show_following, :show_followers]
 
     def update
@@ -7,7 +7,8 @@ class UsersController < ApplicationController
 	      redirect_back(fallback_location: authenticated_root_path())
 	      flash[:msg] = "Image updated successfuly !"
 	    else
-	      render 'edit'
+	      redirect_back(fallback_location: authenticated_root_path())
+	      flash[:msg] = "Something went wrong and the image couldn't be updated !"
 	    end
 	end
 
@@ -20,6 +21,18 @@ class UsersController < ApplicationController
 	    	format.js
 	    end
 	end
+
+	def remove_image
+		params[:image_tobe_deleted] == "bigger_image" ? @user.bigger_image = nil : @user.image = nil
+
+		if @user.save
+			flash[:msg] = "Image removed successfuly !"
+			redirect_to user_path
+		else
+			flash[:msg] = "Something went wrong and the image couldn't be removed !"
+			redirect_to user_path
+		end
+	end 
 
 	private
 

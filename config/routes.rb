@@ -20,5 +20,6 @@ Rails.application.routes.draw do
  post 'handle_friendship', to: 'friendships#handle_friendship'
  get ':id/following', to: 'users#show_following', as: "show_following"
  get ':id/followers', to: 'users#show_followers', as: "show_followers"
-
+ delete ':id', to: 'users#remove_image', as: "remove_image"
+ 
 end

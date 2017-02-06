@@ -1,4 +1,4 @@
-<div class="row" id="image-header" style="background-image: url(<%= @user.bigger_image.url(:large) %>);" >
+<div class="row" id="image-header" style="background-image: url(<%=  @user.bigger_image.url(:large) if @user.bigger_image.exists? %>);" >
 	<div id="image-header-edit"></div>
 	<span class="glyphicon glyphicon-camera"></span>
 	<h3>Change your header photo</h3>
@@ -6,7 +6,7 @@
 	<div id="image-header-img-uploader">
     	<li class="text-center"><h5>Upload photo</h5></li>
     	<li class="text-center">
-    		<%= link_to "Remove", user_update_path, :method => :delete %>
+    		<%= link_to "Remove", remove_image_path(:image_tobe_deleted => "bigger_image"), :method => :delete %>
     	</li>
     	<li></li>
     	<li class="text-center"><h5>Cancel</h5></li>
@@ -22,7 +22,7 @@
 	
 	<div class="col-md-4">
 		<div id="user-info-show">
-			<div style="background-image: url(<%= @user.image.url(:medium) %>);"></div>
+			<div style="background-image: url(<%= @user.image.url(:medium) if @user.image.exists? %>);"></div>
 			<h4><%= @user.fullname %></h4>
 			<h5><%= @user.username %></h5>
 			<h5>Joined <%= @user.created_at.strftime("%B") %> <%= @user.created_at.year %></h5>
@@ -32,7 +32,9 @@
 
 			<div id="show-user-profile-img-uploader">
 		    	<li class="text-center"><h5>Upload photo</h5></li>
-		    	<li class="text-center"><h5>Remove</h5></li>
+		    	<li class="text-center">
+		    		<%= link_to "Remove", remove_image_path(:image_tobe_deleted => "image"), :method => :delete %>
+		    	</li>
 		    	<li></li>
 		    	<li class="text-center"><h5>Cancel</h5></li>
 		    </div>

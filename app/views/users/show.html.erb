@@ -7,7 +7,7 @@
 				<div class="row feed">
 					<div class="col-md-2">
 						<%= link_to user_path(tweet.user) do  %>
-							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) %>);"></div>
+							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) if tweet.user.image.exists? %>);"></div>
 						<% end %>
 					</div>
 					<div class="col-md-10">
