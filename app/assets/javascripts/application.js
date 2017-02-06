@@ -229,11 +229,13 @@ $(document).on('turbolinks:load', function() {
 
 	$("#edit-profile-button").click(function() {
 		$('#image-header').css('position', 'relative');
+		$('.navbar-custom').css('z-index', 996)
 		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3').show();
 	});
 
 	$('#profile-edit-cancel').click(function() {
 		$('#image-header').css('position', '');
+		$('.navbar-custom').css('z-index', 999)
 		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3, #image-header-img-uploader, #show-user-profile-img-uploader').hide();
 	});
 
@@ -348,9 +350,6 @@ $(document).on('turbolinks:load', function() {
 	*	user show img header and user img edit  ******
 	*************************************************/
 
-	// $('#image-header-edit, #image-header span, #image-header h3').click(function() {
-	// 	$('#image-header-img-uploader').show();
-	// });
 
 	$('#image-header-edit, #image-header span, #image-header h3').click(function() {
 			
@@ -373,6 +372,7 @@ $(document).on('turbolinks:load', function() {
 
 	$('#image-header-img-uploader li:last-child, #show-user-profile-img-uploader li:last-child').click(function() {
 		$('#image-header').css('position', '');
+		$('.navbar-custom').css('z-index', 999)
 		$('#overlay, #profile-edit-cancel, #profile-edit-save, #image-header-edit, #image-header>span, #image-header>h3, #user-info-show-edit, #user-info-show span, #user-info-show h3, #image-header-img-uploader, #show-user-profile-img-uploader').hide();
 	});
 
