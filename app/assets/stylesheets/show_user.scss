@@ -108,6 +108,12 @@
 	position: relative;
 	bottom: 55px;
 	left: 15px;
+
+	h6 {
+		color: #707e88;
+		position: relative;
+		bottom: 5px;
+	}
 }
 
 .info-bar-border {
@@ -294,4 +300,24 @@
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 	}
+}
+
+#show-user-following-small-img {
+	height: 72px;
+	width: 72px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border: solid 3px white;
+	cursor: pointer;
+	position: relative;
+	bottom: 25px;
+	left: 10px;
+	border-radius: 7px;
+	background-color: #eee;
+}
+
+#show-user-following-position {
+	margin-bottom: 40px;
+    right: 17px;
 }
