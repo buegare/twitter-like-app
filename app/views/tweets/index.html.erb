@@ -1,7 +1,7 @@
 <div class="container container-custom">
 	
 	<div class="row">
-		<div class="col-md-3" id="user-info">
+		<div class="col-xs-3" id="user-info">
 			<%= link_to user_path(current_user) do  %>
 				<% if current_user.bigger_image.exists? %>
 					<div class="row upper-part-with-img" style="background-image: url(<%= current_user.bigger_image.url(:large) %>);"></div>
@@ -11,7 +11,7 @@
 			<% end %>              	
 
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-xs-4">
 
 					<% if current_user.image.exists? %>
 						<div id="user-info-thumb-img" style="background-image: url(<%= current_user.image.url(:medium) %>);"></div>
@@ -35,45 +35,45 @@
 
 
 				</div>
-				<div class="col-md-8" id="user-info-user-name">
+				<div class="col-xs-8" id="user-info-user-name">
 					<h4><strong><%= link_to current_user.fullname, user_path(current_user)  %></strong></h4>
 					<h6><%= link_to current_user.username, user_path(current_user)  %></h6>
 				</div>
 			</div>
 			
 			<div class="row" id="user-info-stats">
-				<div class="col-md-4">
+				<div class="col-xs-4">
 					<span><%= link_to 'TWEETS', user_path(current_user) %></span>
 					<h4><%= current_user.tweets.count %></h4>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-4">
 					<span><%= link_to 'FOLLOWING', show_following_path(current_user) %></span>
 					<h4><%= current_user.follows.count %></h4>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-4">
 					<span><%= link_to 'FOLLOWERS', show_followers_path(current_user) %></span>
 					<h4><%= current_user.followers.count %></h4>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-xs-6">
 			<div class="row" id="tweet-area-div">
 				<%= render 'tweet_creation' %>
 			</div>
 			<% @tweets.each do |tweet| %>
 				<div class="row feed">
-					<div class="col-md-2">
+					<div class="col-xs-2">
 						<%= link_to user_path(tweet.user) do  %>
-							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) %>);">
+							<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) if tweet.user.image.exists? %>);">
 								<%= render 'users/user_info_hover', :tweet => tweet %>
 							</div>
 						<% end %>
 					</div>
-					<div class="col-md-10">
+					<div class="col-xs-10">
 						<div class="row">
 							<h6>
-								<strong><%= tweet.user.fullname %></strong>
+								<strong><%= tweet.user.fullname %></strong>s
 								<%= tweet.user.username %>
 								<%= time_ago_in_words(tweet.created_at) %> ago
 							</h6>
