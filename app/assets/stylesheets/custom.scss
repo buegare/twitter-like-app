@@ -47,3 +47,41 @@ body {
 .container-custom {
 	margin-top: 60px;
 }
+
+#trends {
+	width: 290px;
+    min-height: 425px;
+    border: 1px solid #e1e8ed;
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+    bottom: 27px;
+    right: 16px;
+
+    h4 {
+    	color: #66757f;
+    	font-weight: 300;
+    	margin-top: 20px;
+    }
+
+    li {
+    	list-style: none;
+
+    	div {
+    		&:first-child { 
+    			color: #1b95e0;
+    			font-weight: bold;
+    		}
+
+    		&:last-child {
+    			color: #8899a6;
+    			font-size: 12px;
+    		}
+    	}
+    }
+}
+
+.hashtag-color {
+	color: #1b95e0;
+	font-weight: bold;
+}

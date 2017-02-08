@@ -19,7 +19,7 @@
 							</h6>
 						</div>
 						<div class="row">
-							<p><%= tweet.body %></p>
+							<p><%= colorize_hashtag(tweet.body) %></p>
 
 							<% if tweet.photo.exists? %>
 			                	<div class="tweet-images" style="background-image: url(<%= tweet.photo.url(:large) %>);"></div>

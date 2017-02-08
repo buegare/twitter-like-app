@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
 
 	def index
 		@tweets = Tweet.where(user_id: current_user.follows.map(&:following)).order(created_at: :desc)
+		@trends = Hashtag.group('word').order('count_word desc').count('word').first(10)
 	end
 
   	def create
@@ -29,7 +30,7 @@ class TweetsController < ApplicationController
 	    end
 
   		def tweet_params
-	      params.require(:tweet).permit(:title, :body, :photo)
+	      params.require(:tweet).permit(:body, :photo)
 	    end
 
 

@@ -1,4 +1,6 @@
 class Tweet < ApplicationRecord
+	before_save :save_to_hashtag
+
 	validates :body, :length => { :maximum => 140, :too_long => "%{count} characters is the maximum allowed" }
 
 	belongs_to :user
@@ -8,4 +10,12 @@ class Tweet < ApplicationRecord
   							path: ":rails_root/public/assets/tweets/:id/:style/:basename.:extension"
   	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
+
+  	private
+  		
+  		def save_to_hashtag
+		  	self.body.split(' ').each do |w| 
+				Hashtag.create('word': w) if w.start_with?('#')
+			end
+		end
 end

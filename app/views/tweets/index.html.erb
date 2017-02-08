@@ -55,6 +55,22 @@
 					<h4><%= current_user.followers.count %></h4>
 				</div>
 			</div>
+
+			<div class="col-xs-6" id="trends">
+				<h4>Trends</h4>
+				<div class="container">
+					<% @trends.each do |trends| %>
+						<li>
+							<div class="row">
+								<span><%= trends[0] %></span>
+							</div>
+							<div class="row">
+								<span><%= trends[1] %> <%= trends[1] > 1 ? 'Tweets' : 'Tweet' %></span>
+							</div>
+						</li>
+					<% end %>
+				</div>
+			</div>
 		</div>
 
 		<div class="col-xs-6">
@@ -73,13 +89,13 @@
 					<div class="col-xs-10">
 						<div class="row">
 							<h6>
-								<strong><%= tweet.user.fullname %></strong>s
+								<strong><%= tweet.user.fullname %></strong>
 								<%= tweet.user.username %>
 								<%= time_ago_in_words(tweet.created_at) %> ago
 							</h6>
 						</div>
 						<div class="row">
-							<p><%= tweet.body %></p>
+							<p><%= colorize_hashtag(tweet.body) %></p>
 
 							<% if tweet.photo.exists? %>
 			                	<div class="tweet-images" style="background-image: url(<%= tweet.photo.url(:large) %>);"></div>
