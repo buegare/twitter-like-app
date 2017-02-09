@@ -56,13 +56,13 @@
 				</div>
 			</div>
 
-			<div class="col-xs-6" id="trends">
+			<div class="col-xs-6 trends">
 				<h4>Trends</h4>
 				<div class="container">
 					<% @trends.each do |trends| %>
 						<li>
 							<div class="row">
-								<span><%= trends[0] %></span>
+								<span><%= link_to trends[0], hashtag_path(:word => trends[0]) %></span>
 							</div>
 							<div class="row">
 								<span><%= trends[1] %> <%= trends[1] > 1 ? 'Tweets' : 'Tweet' %></span>

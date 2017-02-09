@@ -1,0 +1,60 @@
+<div id="hashtag-show-position">
+	<div class="row" id="hashtag-header">
+		<h2><%= params[:word] %></h2>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-xs-6 trends" id="hashtag-trends-position">
+				<h4>Trends</h4>
+				<div class="container">
+					<% @trends.each do |trends| %>
+						<li>
+							<div class="row">
+								<span><%= link_to trends[0], hashtag_path(:word => trends[0]) %></span>
+							</div>
+							<div class="row">
+								<span><%= trends[1] %> <%= trends[1] > 1 ? 'Tweets' : 'Tweet' %></span>
+							</div>
+						</li>
+					<% end %>
+				</div>
+			</div>
+
+
+
+
+			<div class="col-xs-6" id="hashtag-tweets">
+				<% @tweets.each do |tweet| %>
+					<div class="row feed">
+						<div class="col-xs-2">
+							<%= link_to user_path(tweet.user) do  %>
+								<div class="feed-image" style="background-image: url(<%= tweet.user.image.url(:thumb) if tweet.user.image.exists? %>);">
+									<%= render 'users/user_info_hover', :tweet => tweet %>
+								</div>
+							<% end %>
+						</div>
+						<div class="col-xs-10">
+							<div class="row">
+								<h6>
+									<strong><%= tweet.user.fullname %></strong>
+									<%= tweet.user.username %>
+									<%= time_ago_in_words(tweet.created_at) %> ago
+								</h6>
+							</div>
+							<div class="row">
+								<p><%= colorize_hashtag(tweet.body) %></p>
+
+								<% if tweet.photo.exists? %>
+				                	<div class="tweet-images" style="background-image: url(<%= tweet.photo.url(:large) %>);"></div>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+</div>

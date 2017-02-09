@@ -21,5 +21,5 @@ Rails.application.routes.draw do
  get ':id/following', to: 'users#show_following', as: "show_following"
  get ':id/followers', to: 'users#show_followers', as: "show_followers"
  delete ':id', to: 'users#remove_image', as: "remove_image"
- 
+ get 'hashtag/:word', to: 'hashtags#show', as: "hashtag"
 end

@@ -13,7 +13,7 @@ class User < ApplicationRecord
                 path: ":rails_root/public/assets/users/:id/bigger_image/:style/:basename.:extension"
   validates_attachment_content_type :bigger_image, content_type: /\Aimage\/.*\z/
 
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
   has_many :follows
   has_many :followers
 
