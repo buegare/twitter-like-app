@@ -410,4 +410,13 @@ $(document).on('turbolinks:load', function() {
 		$('#choose-photo-submit-btn-user-profile-img').click();
 	});
 
+
+	/*************************************************
+	*******		signup image 				    ******
+	*************************************************/
+
+	$( "#signup-owl" ).animate({
+	    top: '100px'
+	  }, 5000);
+
 });

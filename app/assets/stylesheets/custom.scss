@@ -1,10 +1,3 @@
-// .row {
-// 	border: solid 1px red;
-// }
-// [class^="col"] {
-// 	border: solid 1px blue;
-// }
-
 body {
 	background-color: honeydew;
 }
@@ -46,6 +39,12 @@ body {
 
 .container-custom {
 	margin-top: 60px;
+}
+
+#signup-owl {
+	position: relative;
+    left: 1000px;
+    top: 154px;
 }
 
 .trends {
