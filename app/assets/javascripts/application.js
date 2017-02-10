@@ -412,11 +412,18 @@ $(document).on('turbolinks:load', function() {
 
 
 	/*************************************************
-	*******		signup image 				    ******
+	*******				signup 				    ******
 	*************************************************/
 
 	$( "#signup-owl" ).animate({
 	    top: '100px'
 	  }, 5000);
+
+
+	$('#user_username').keydown(function(e) {		
+		if (e.key == '@') {
+			e.preventDefault()
+		}
+	});
 
 });
